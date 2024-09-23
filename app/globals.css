@@ -2,3 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-color: #F6F1EC;
+  --cpurple: #7568DE;
+  --cred: #FE6845;
+  --cblue: #468AFB;
+  --corange: #FFA046;
+  --cgreen: #9ECB45;
+}
+
+.h-font {
+  font-family: "IBM Plex Serif", serif;
+}
+
+.p-font {
+  font-family: "Source Sans 3", sans-serif;
+}

@@ -12,6 +12,10 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        'ibm-plex-serif': ['"IBM Plex Serif"', 'serif'],
+        'source-sans': ['"Source Sans 3"', 'sans-serif'],
+      },
     },
   },
   plugins: [],
