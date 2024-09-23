@@ -9,7 +9,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Tyrell Haywood</title>
-        <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+        <link rel="icon" type="image/svg+xml" href="/logo-black.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
