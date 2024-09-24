@@ -9,11 +9,11 @@ const Homepage = () => {
       </div>
       <div className=" w-full flex flex-col text-left">
         <p className="p-font text-sm md:text-base lg:text-xl mb-[15px] max-w-[1000px]">
-          I’m in my second year studying CS @ Carleton University. This year
-          I’ve joined CUSEC as Director of Technology for our 2025 conference.
-          Lately, I’m excited about creating interactive digital experiences
-          that incorporate live audio inputs, large datasets, and user
-          interactions.
+          I&rsquo;m in my second year studying CS @ Carleton University. This
+          year I&rsquo;ve joined CUSEC as Director of Technology for our 2025
+          conference. Lately, I&rsquo;m excited about creating interactive
+          digital experiences that incorporate live audio inputs, large
+          datasets, and user interactions.
         </p>
         <p className="p-font text-sm md:text-base lg:text-xl mb-[15px] max-w-[1000px]">
           Currently raising ⍩Synchronize, a gathering of artists, engineers,
