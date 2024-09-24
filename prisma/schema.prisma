@@ -1,0 +1,33 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model SoftwarePost {
+  id    Int    @id @default(autoincrement())
+  title String
+  image String
+}
+
+model HardwarePost {
+  id    Int    @id @default(autoincrement())
+  title String
+  image String
+}
+
+model CommunityPost {
+  id    Int    @id @default(autoincrement())
+  title String
+  image String
+}
+
+model PersonalPost {
+  id    Int    @id @default(autoincrement())
+  title String
+  image String
+}

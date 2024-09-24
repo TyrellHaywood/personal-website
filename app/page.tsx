@@ -1,3 +1,11 @@
+import Homepage from "./homepage/page";
+import Projects from "./projects/page";
+
 export default function Home() {
-  return <h1 className="h-font">Tyrell Haywood</h1>;
+  return (
+    <div className="w-[90%] m-auto flex flex-col justify-center items-center">
+      <Homepage />
+      <Projects />
+    </div>
+  );
 }
