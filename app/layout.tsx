@@ -21,7 +21,7 @@ export default function RootLayout({
           rel="stylesheet"
         ></link>
       </head>
-      <body>{children}</body>
+      <body className="background">{children}</body>
     </html>
   );
 }

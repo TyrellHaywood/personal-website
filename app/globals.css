@@ -11,6 +11,10 @@
   --cgreen: #9ECB45;
 }
 
+.background {
+  background-color: var(--bg-color);
+}
+
 .h-font {
   font-family: "IBM Plex Serif", serif;
 }
