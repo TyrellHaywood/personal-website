@@ -7,19 +7,19 @@ const Homepage = () => {
         <h1 className="h-font text-6xl lg:text-8xl text-left">Hello,</h1>
         <h1 className="h-font text-6xl lg:text-8xl text-left">I'm Tyrell!</h1>
       </div>
-      <div className=" w-full flex flex-col text-left">
-        <p className="p-font text-sm md:text-base lg:text-xl mb-[15px] max-w-[1000px]">
+      <div className=" w-full flex flex-col justify-center text-left">
+        <p className="p-font text-sm md:text-base lg:text-xl mb-[15px] md:w-2/3">
           I’m in my second year studying CS @ Carleton University. This year
           I’ve joined CUSEC as Director of Technology for our 2025 conference.
           Lately, I’m excited about creating interactive digital experiences
           that incorporate live audio inputs, large datasets, and user
           interactions.
         </p>
-        <p className="p-font text-sm md:text-base lg:text-xl mb-[15px] max-w-[1000px]">
+        <p className="p-font text-sm md:text-base lg:text-xl mb-[15px] md:w-2/3">
           Currently raising ⍩Synchronize, a gathering of artists, engineers,
           researchers, and makers where we work on & share our passion projects.
         </p>
-        <p className="p-font text-sm md:text-base lg:text-xl mb-[15px] max-w-[1000px]">
+        <p className="p-font text-sm md:text-base lg:text-xl mb-[15px] md:w-2/3">
           Right now I’m working at the Carleton Immersive Media Studio (CIMS),
           helping build Canada’s Digital Twin, a web-based platform for
           visualizing and interacting with multi-scale geospatial data, building
