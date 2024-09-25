@@ -2,6 +2,7 @@ import Homepage from "./homepage/page";
 import Projects from "./projects/page";
 import Community from "./community/page";
 import Personal from "./personal/page";
+import Footer from "./footer/page";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Projects />
       <Community />
       <Personal />
+      <Footer />
     </div>
   );
 }
