@@ -4,9 +4,9 @@ import React, { useState, useEffect } from "react";
 
 const TypeWriter = () => {
   const sentences = [
-    "Hello, world!",
-    "Welcome to my website.",
-    "Enjoy your stay!",
+    "Let’s chat and share ideas :D",
+    "Come check out ⍩Synchronize Sundays",
+    "Enjoy you stay",
   ];
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
@@ -22,13 +22,13 @@ const TypeWriter = () => {
         setDisplayedText(
           currentSentence.substring(0, displayedText.length - 1)
         );
-        setTypingSpeed(50); // Speed up when deleting
+        setTypingSpeed(25); // Speed up when deleting
       } else {
         // if typing, increase the length of displayedText
         setDisplayedText(
           currentSentence.substring(0, displayedText.length + 1)
         );
-        setTypingSpeed(100); // normal speed when typing
+        setTypingSpeed(75); // normal speed when typing
       }
 
       // if sentence is fully typed out, start deleting after a pause
@@ -51,7 +51,7 @@ const TypeWriter = () => {
 
   return (
     <div className="border border-black w-full h-[45px] flex items-center pl-2 p-font font-light text-xl lg:text-3xl">
-      {displayedText}
+      {displayedText + "|"}
     </div>
   );
 };

@@ -12,22 +12,26 @@ model SoftwarePost {
   id    Int    @id @default(autoincrement())
   title String
   image String
+  description String @db.Text
 }
 
 model HardwarePost {
   id    Int    @id @default(autoincrement())
   title String
   image String
+  description String @db.Text
 }
 
 model CommunityPost {
   id    Int    @id @default(autoincrement())
   title String
   image String
+  description String @db.Text
 }
 
 model PersonalPost {
   id    Int    @id @default(autoincrement())
   title String
   image String
+  description String @db.Text
 }
