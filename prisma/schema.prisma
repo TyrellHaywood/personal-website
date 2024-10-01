@@ -11,6 +11,7 @@ datasource db {
 model SoftwarePost {
   id    Int    @id @default(autoincrement())
   title String
+  year  Int
   image String
   description String @db.Text
 }
@@ -18,6 +19,7 @@ model SoftwarePost {
 model HardwarePost {
   id    Int    @id @default(autoincrement())
   title String
+  year  Int
   image String
   description String @db.Text
 }
@@ -25,6 +27,7 @@ model HardwarePost {
 model CommunityPost {
   id    Int    @id @default(autoincrement())
   title String
+  year  Int
   image String
   description String @db.Text
 }
@@ -32,6 +35,7 @@ model CommunityPost {
 model PersonalPost {
   id    Int    @id @default(autoincrement())
   title String
+  year  Int
   image String
   description String @db.Text
 }
