@@ -6,9 +6,18 @@ interface Personal {
   year: number;
 }
 
-const PersonalTab = ({ personal }: { personal: Personal }) => {
+const PersonalTab = ({
+  personal,
+  onClick,
+}: {
+  personal: Personal;
+  onClick: (id: number) => void;
+}) => {
   return (
-    <button className="w-full h-[25px] lg:h-[45px] flex items-center my-[10px]">
+    <button
+      className="w-full h-[25px] lg:h-[45px] flex items-center my-[10px]"
+      onClick={() => onClick(personal.id)}
+    >
       <h3 className="flex-shrink-0 p-font font-light text-xl lg:text-3xl">
         {personal.title}
       </h3>

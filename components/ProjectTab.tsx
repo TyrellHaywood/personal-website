@@ -6,9 +6,18 @@ interface Project {
   year: number;
 }
 
-const ProjectTab = ({ project }: { project: Project }) => {
+const ProjectTab = ({
+  project,
+  onClick,
+}: {
+  project: Project;
+  onClick: (id: number) => void;
+}) => {
   return (
-    <button className="w-full h-[25px] lg:h-[45px] flex items-center my-[10px]">
+    <button
+      className="w-full h-[25px] lg:h-[45px] flex items-center my-[10px]"
+      onClick={() => onClick(project.id)}
+    >
       <h3 className="flex-shrink-0 p-font font-light text-xl lg:text-3xl">
         {project.title}
       </h3>

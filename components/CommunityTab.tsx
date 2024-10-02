@@ -6,9 +6,18 @@ interface Community {
   year: number;
 }
 
-const CommunityTab = ({ community }: { community: Community }) => {
+const CommunityTab = ({
+  community,
+  onClick,
+}: {
+  community: Community;
+  onClick: (id: number) => void;
+}) => {
   return (
-    <button className="w-full h-[25px] lg:h-[45px] flex items-center my-[10px]">
+    <button
+      className="w-full h-[25px] lg:h-[45px] flex items-center my-[10px]"
+      onClick={() => onClick(community.id)}
+    >
       <h3 className="flex-shrink-0 p-font font-light text-xl lg:text-3xl">
         {community.title}
       </h3>
