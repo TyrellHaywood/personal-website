@@ -14,7 +14,7 @@ const CommunityTab = ({ community }: { community: Community }) => {
       </h3>
       <div className="flex-grow border-t lg:border-t-2 border-black border-dotted mx-1"></div>
       <h3 className="flex-shrink-0 p-font font-light text-xl lg:text-3xl">
-      {community.year}
+        {community.year}
       </h3>
     </button>
   );
