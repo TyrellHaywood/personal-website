@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-interface Personal {
+interface ProjectTarget {
   id: number;
   title: string;
   image: string;
@@ -8,7 +8,11 @@ interface Personal {
   year: number;
 }
 
-const PersonalShowcase = ({ personal }: { personal: Personal }) => {
+const ProjectTargetShowcase = ({
+  projectTarget,
+}: {
+  projectTarget: ProjectTarget;
+}) => {
   return (
     <button className="h-auto md:ml-[50px] mb-6">
       <div className="w-full h-full overflow-hidden">
@@ -25,4 +29,4 @@ const PersonalShowcase = ({ personal }: { personal: Personal }) => {
   );
 };
 
-export default PersonalShowcase;
+export default ProjectTargetShowcase;

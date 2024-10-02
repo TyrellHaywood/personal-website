@@ -1,6 +1,14 @@
 import Image from "next/image";
 
-const ProjectShowcase = () => {
+interface Project {
+  id: number;
+  title: string;
+  image: string;
+  description: string;
+  year: number;
+}
+
+const ProjectShowcase = ({ project }: { project: Project }) => {
   return (
     <button className="h-auto md:ml-[50px] mb-6">
       <div className="w-full h-full overflow-hidden">

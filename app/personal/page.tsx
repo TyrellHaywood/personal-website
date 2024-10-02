@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import PersonalTab from "@/components/PersonalTab.tsx";
 import PersonalShowcase from "@/components/PersonalShowcase";
+import PersonalTargetShowcase from "@/components/PersonalTarget";
 import CircleGreen from "@/components/CircleGreen";
 import CircleRed from "@/components/CircleRed";
 
@@ -17,11 +18,18 @@ interface Personal {
 
 const Personal = () => {
   const [personals, setPersonals] = useState<Personal[]>([]);
+  const [currentPersonal, setCurrentPersonal] = useState(false);
+  const [currentId, setCurrentId] = useState(0);
+
+  const toggleProject = (id: number) => {
+    setCurrentId(id);
+    setCurrentPersonal((previousState) => !previousState);
+  };
 
   useEffect(() => {
     const fetchPersonals = async () => {
       try {
-        const response = await fetch("/api/community");
+        const response = await fetch("/api/personal");
         const data = await response.json();
         setPersonals(data);
       } catch (error) {
@@ -42,15 +50,25 @@ const Personal = () => {
         <h2 className="h-font my-[25px] text-2xl lg:text-4x">Personal</h2>
         <div className="w-full">
           {personals.map((personal) => (
-            <PersonalTab key={personal.id} personal={personal} />
+            <PersonalTab
+              key={personal.id}
+              personal={personal}
+              onClick={toggleProject}
+            />
           ))}
         </div>
       </div>
       <div className="w-full md:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-4 justify-center md:justify-end items-center">
-        <PersonalShowcase />
-        <PersonalShowcase />
-        <PersonalShowcase />
-        <PersonalShowcase />
+        {!currentPersonal
+          ? personals.map((personal) => (
+              <PersonalShowcase key={personal.id} personal={personal} />
+            ))
+          : personals.map((personalTarget) => (
+              <PersonalTargetShowcase
+                key={personalTarget.id}
+                personalTarget={personalTarget}
+              />
+            ))}
       </div>
     </div>
   );
