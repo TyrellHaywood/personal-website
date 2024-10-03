@@ -1,4 +1,15 @@
-import React from "react";
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
+// define our transition behavior
+const transitionConfig = (delay = 0) => ({
+  type: "spring",
+  stiffness: 50,
+  duration: 0.5,
+  delay: delay,
+});
 
 const Homepage = () => {
   return (
