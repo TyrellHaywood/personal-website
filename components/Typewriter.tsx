@@ -51,7 +51,7 @@ const TypeWriter = () => {
 
   return (
     <div className="border border-black w-full h-[45px] flex items-center pl-2 p-font font-light text-xl lg:text-3xl">
-      {displayedText + "|"}
+      {"> " + displayedText + "|"}
     </div>
   );
 };

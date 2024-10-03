@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import PersonalTab from "@/components/PersonalTab.tsx";
+import PersonalTab from "@/components/PersonalTab";
 import PersonalShowcase from "@/components/PersonalShowcase";
 import PersonalTargetShowcase from "@/components/PersonalTarget";
 import CircleGreen from "@/components/CircleGreen";
