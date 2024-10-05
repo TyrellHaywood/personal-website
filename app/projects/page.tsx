@@ -47,13 +47,15 @@ const Projects = () => {
         </div>
         <h2 className="h-font my-[25px] text-2xl lg:text-4x">Software</h2>
         <div className="w-full">
-          {projects.map((project) => (
-            <ProjectTab
-              key={project.id}
-              project={project}
-              onClick={toggleProject}
-            />
-          ))}
+          {projects
+            ? projects.map((project) => (
+                <ProjectTab
+                  key={project.id}
+                  project={project}
+                  onClick={toggleProject}
+                />
+              ))
+            : null}
         </div>
       </div>
       <div className="w-full md:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-4 justify-center md:justify-end items-center">
