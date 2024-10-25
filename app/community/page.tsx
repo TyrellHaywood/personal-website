@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-import CommunityTab from "@/components/CommunityTab";
-import CommunityShowcase from "@/components/CommunityShowcase";
-import CommunityTargetShowcase from "@/components/CommunityTarget";
+import CommunityTab from "@/components/Community/CommunityTab";
+import CommunityShowcase from "@/components/Community/CommunityShowcase";
+import CommunityTargetShowcase from "@/components/Community/CommunityTarget";
 import CircleGreen from "@/components/CircleGreen";
 import CircleRed from "@/components/CircleRed";
 

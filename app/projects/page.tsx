@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ProjectTab from "@/components/ProjectTab";
-import ProjectShowcase from "@/components/ProjectShowcase";
-import ProjectTargetShowcase from "@/components/ProjectTarget";
+import ProjectTab from "@/components/Project/ProjectTab";
+import ProjectShowcase from "@/components/Project/ProjectShowcase";
+import ProjectTargetShowcase from "@/components/Project/ProjectTarget";
 import CircleGreen from "@/components/CircleGreen";
 
 interface Project {
@@ -47,15 +47,13 @@ const Projects = () => {
         </div>
         <h2 className="h-font my-[25px] text-2xl lg:text-4x">Software</h2>
         <div className="w-full">
-          {projects
-            ? projects.map((project) => (
-                <ProjectTab
-                  key={project.id}
-                  project={project}
-                  onClick={toggleProject}
-                />
-              ))
-            : null}
+          {projects.map((project) => (
+            <ProjectTab
+              key={project.id}
+              project={project}
+              onClick={toggleProject}
+            />
+          ))}
         </div>
       </div>
       <div className="w-full md:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-4 justify-center md:justify-end items-center">
