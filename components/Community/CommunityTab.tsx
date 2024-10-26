@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const transitionConfig = (delay = 0) => ({
@@ -17,31 +18,58 @@ interface Community {
   year: number;
 }
 
+interface CommunityTabProps {
+  community: Community;
+  isSelected: boolean;
+  onClick: (id: number) => void;
+}
+
 const CommunityTab = ({
   community,
+  isSelected,
   onClick,
-}: {
-  community: Community;
-  onClick: (id: number) => void;
-}) => {
+}: CommunityTabProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.button
       className="w-full h-[25px] lg:h-[45px] flex items-center my-[10px]"
       onClick={() => onClick(community.id)}
       transition={transitionConfig()}
       initial={{ backgroundColor: "transparent" }}
-      animate={{ backgroundColor: "rgba(0, 0, 0, 0.0)" }}
-      whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
+      animate={{
+        backgroundColor: isSelected
+          ? "rgba(0, 0, 0, 0.05)"
+          : "rgba(0, 0, 0, 0.0)",
+      }}
+      whileHover={{
+        backgroundColor: isSelected
+          ? "rgba(0, 0, 0, 0.07)"
+          : "rgba(0, 0, 0, 0.05)",
+      }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
     >
-      <h3 className="flex-shrink-0 p-font font-light text-xl lg:text-3xl">
+      <h3
+        className={`flex-shrink-0 p-font text-xl lg:text-3xl ${
+          isSelected ? "font-normal" : "font-light"
+        }`}
+      >
         {community.title}
       </h3>
       <motion.div
-        className="flex-grow border-t lg:border-t-2 border-black border-dotted mx-1 rounded-md"
+        className={`flex-grow border-t lg:border-t-2 border-dotted border-spacing-[10px] mx-1 rounded-md`}
+        transition={transitionConfig()}
         initial={{ borderColor: "black" }}
-        whileHover={{ borderColor: "green" }}
+        animate={{
+          borderColor: isHovered || isSelected ? "var(--corange)" : "black",
+        }}
       ></motion.div>
-      <h3 className="flex-shrink-0 p-font font-light text-xl lg:text-3xl">
+      <h3
+        className={`flex-shrink-0 p-font text-xl lg:text-3xl ${
+          isSelected ? "font-normal" : "font-light"
+        }`}
+      >
         {community.year}
       </h3>
     </motion.button>

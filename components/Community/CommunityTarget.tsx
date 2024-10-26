@@ -8,24 +8,35 @@ interface CommunityTarget {
   year: number;
 }
 
+interface CommunityTargetShowcaseProps {
+  community: CommunityTarget;
+}
+
 const CommunityTargetShowcase = ({
-  communityTarget,
-}: {
-  communityTarget: CommunityTarget;
-}) => {
+  community,
+}: CommunityTargetShowcaseProps) => {
   return (
-    <button className="h-auto md:ml-[50px] mb-6">
+    <div className="w-full md:ml-[50px]">
       <div className="w-full h-full overflow-hidden">
         <Image
           src="/images/placeholder.svg"
           width={600}
           height={400}
-          alt="Community Target"
+          alt={community.title}
           layout="responsive"
           objectFit="contain"
+          className="w-full"
         />
       </div>
-    </button>
+      <div className="flex flex-col gap-4">
+        <h1 className="flex-shrink-0 p-font text-xl lg:text-3xl font-light">
+          {community.title}
+        </h1>
+        <p className="p-font text-sm md:text-base lg:text-xl">
+          {community.description}
+        </p>
+      </div>
+    </div>
   );
 };
 

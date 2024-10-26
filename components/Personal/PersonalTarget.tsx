@@ -8,24 +8,33 @@ interface PersonalTarget {
   year: number;
 }
 
-const PersonalTargetShowcase = ({
-  personalTarget,
-}: {
-  personalTarget: PersonalTarget;
-}) => {
+interface PersonalTargetShowcaseProps {
+  personal: PersonalTarget;
+}
+
+const PersonalTargetShowcase = ({ personal }: PersonalTargetShowcaseProps) => {
   return (
-    <button className="h-auto md:ml-[50px] mb-6">
+    <div className="w-full md:ml-[50px]">
       <div className="w-full h-full overflow-hidden">
         <Image
           src="/images/placeholder.svg"
           width={600}
           height={400}
-          alt="Project Target"
+          alt={personal.title}
           layout="responsive"
           objectFit="contain"
+          className="w-full"
         />
       </div>
-    </button>
+      <div className="flex flex-col gap-4">
+        <h1 className="flex-shrink-0 p-font text-xl lg:text-3xl font-light">
+          {personal.title}
+        </h1>
+        <p className="p-font text-sm md:text-base lg:text-xl">
+          {personal.description}
+        </p>
+      </div>
+    </div>
   );
 };
 
