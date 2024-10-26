@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-import PersonalTab from "@/components/PersonalTab";
-import PersonalShowcase from "@/components/PersonalShowcase";
-import PersonalTargetShowcase from "@/components/PersonalTarget";
+import PersonalTab from "@/components/Personal/PersonalTab";
+import PersonalShowcase from "@/components/Personal/PersonalShowcase";
+import PersonalTargetShowcase from "@/components/Personal/PersonalTarget";
 import CircleGreen from "@/components/CircleGreen";
 import CircleRed from "@/components/CircleRed";
 
@@ -18,12 +18,12 @@ interface Personal {
 
 const Personal = () => {
   const [personals, setPersonals] = useState<Personal[]>([]);
-  const [currentPersonal, setCurrentPersonal] = useState(false);
-  const [currentId, setCurrentId] = useState(0);
+  const [selectedPersonalId, setSelectedPersonalId] = useState<number | null>(
+    null
+  );
 
-  const toggleProject = (id: number) => {
-    setCurrentId(id);
-    setCurrentPersonal((previousState) => !previousState);
+  const togglePersonal = (id: number) => {
+    setSelectedPersonalId((currentId) => (currentId === id ? null : id));
   };
 
   useEffect(() => {
@@ -40,6 +40,11 @@ const Personal = () => {
     fetchPersonals();
   }, []);
 
+  // find the currently selected personal
+  const selectedPersonal = personals.find(
+    (personal) => personal.id === selectedPersonalId
+  );
+
   return (
     <div className="w-full flex flex-col md:flex-row justify-center md:justify-start items-start my-[100px]">
       <div className="w-[90vw] md:w-2/5">
@@ -53,22 +58,22 @@ const Personal = () => {
             <PersonalTab
               key={personal.id}
               personal={personal}
-              onClick={toggleProject}
+              isSelected={personal.id === selectedPersonalId}
+              onClick={togglePersonal}
             />
           ))}
         </div>
       </div>
-      <div className="w-full md:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-4 justify-center md:justify-end items-center">
-        {!currentPersonal
-          ? personals.map((personal) => (
+      <div className="w-full md:w-3/5 flex justify-center items-start">
+        {selectedPersonal ? (
+          <PersonalTargetShowcase personal={selectedPersonal} />
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {personals.map((personal) => (
               <PersonalShowcase key={personal.id} personal={personal} />
-            ))
-          : personals.map((personalTarget) => (
-              <PersonalTargetShowcase
-                key={personalTarget.id}
-                personalTarget={personalTarget}
-              />
             ))}
+          </div>
+        )}
       </div>
     </div>
   );

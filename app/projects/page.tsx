@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ProjectTab from "@/components/ProjectTab";
-import ProjectShowcase from "@/components/ProjectShowcase";
-import ProjectTargetShowcase from "@/components/ProjectTarget";
+import ProjectTab from "@/components/Project/ProjectTab";
+import ProjectShowcase from "@/components/Project/ProjectShowcase";
+import ProjectTargetShowcase from "@/components/Project/ProjectTarget";
 import CircleGreen from "@/components/CircleGreen";
 
 interface Project {
@@ -16,12 +16,12 @@ interface Project {
 
 const Projects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
-  const [currentProject, setCurrentProject] = useState(false);
-  const [currentId, setCurrentId] = useState(0);
+  const [selectedProjectId, setSelectedProjectId] = useState<number | null>(
+    null
+  );
 
   const toggleProject = (id: number) => {
-    setCurrentId(id);
-    setCurrentProject((previousState) => !previousState);
+    setSelectedProjectId((currentId) => (currentId === id ? null : id));
   };
 
   useEffect(() => {
@@ -38,6 +38,11 @@ const Projects = () => {
     fetchProjects();
   }, []);
 
+  // find the currently selected project
+  const selectedProject = projects.find(
+    (project) => project.id === selectedProjectId
+  );
+
   return (
     <div className="w-full flex flex-col md:flex-row justify-center md:justify-start items-start my-[100px]">
       <div className="w-[90vw] md:w-2/5">
@@ -47,28 +52,26 @@ const Projects = () => {
         </div>
         <h2 className="h-font my-[25px] text-2xl lg:text-4x">Software</h2>
         <div className="w-full">
-          {projects
-            ? projects.map((project) => (
-                <ProjectTab
-                  key={project.id}
-                  project={project}
-                  onClick={toggleProject}
-                />
-              ))
-            : null}
+          {projects.map((project) => (
+            <ProjectTab
+              key={project.id}
+              project={project}
+              isSelected={project.id === selectedProjectId}
+              onClick={toggleProject}
+            />
+          ))}
         </div>
       </div>
-      <div className="w-full md:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-4 justify-center md:justify-end items-center">
-        {!currentProject
-          ? projects.map((project) => (
+      <div className="w-full md:w-3/5 flex justify-center items-start">
+        {selectedProject ? (
+          <ProjectTargetShowcase project={selectedProject} />
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {projects.map((project) => (
               <ProjectShowcase key={project.id} project={project} />
-            ))
-          : projects.map((projectTarget) => (
-              <ProjectTargetShowcase
-                key={projectTarget.id}
-                projectTarget={projectTarget}
-              />
             ))}
+          </div>
+        )}
       </div>
     </div>
   );

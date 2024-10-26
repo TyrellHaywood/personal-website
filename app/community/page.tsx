@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-import CommunityTab from "@/components/CommunityTab";
-import CommunityShowcase from "@/components/CommunityShowcase";
-import CommunityTargetShowcase from "@/components/CommunityTarget";
+import CommunityTab from "@/components/Community/CommunityTab";
+import CommunityShowcase from "@/components/Community/CommunityShowcase";
+import CommunityTargetShowcase from "@/components/Community/CommunityTarget";
 import CircleGreen from "@/components/CircleGreen";
 import CircleRed from "@/components/CircleRed";
 
@@ -18,12 +18,12 @@ interface Community {
 
 const Community = () => {
   const [communities, setCommunities] = useState<Community[]>([]);
-  const [currentCommunity, setCurrentCommunity] = useState(false);
-  const [currentId, setCurrentId] = useState(0);
+  const [selectedCommunityId, setSelectedCommunityId] = useState<number | null>(
+    null
+  );
 
-  const toggleProject = (id: number) => {
-    setCurrentId(id);
-    setCurrentCommunity((previousState) => !previousState);
+  const toggleCommunity = (id: number) => {
+    setSelectedCommunityId((currentId) => (currentId === id ? null : id));
   };
 
   useEffect(() => {
@@ -40,6 +40,11 @@ const Community = () => {
     fetchCommunties();
   }, []);
 
+  // find the currently selected community
+  const selectedCommunity = communities.find(
+    (community) => community.id === selectedCommunityId
+  );
+
   return (
     <div className="w-full flex flex-col md:flex-row justify-center md:justify-start items-start my-[100px]">
       <div className="w-[90vw] md:w-2/5">
@@ -53,22 +58,22 @@ const Community = () => {
             <CommunityTab
               key={community.id}
               community={community}
-              onClick={toggleProject}
+              isSelected={community.id === selectedCommunityId}
+              onClick={toggleCommunity}
             />
           ))}
         </div>
       </div>
-      <div className="w-full md:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-4 justify-center md:justify-end items-center">
-        {!currentCommunity
-          ? communities.map((community) => (
+      <div className="w-full md:w-3/5 flex justify-center items-start">
+        {selectedCommunity ? (
+          <CommunityTargetShowcase community={selectedCommunity} />
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {communities.map((community) => (
               <CommunityShowcase key={community.id} community={community} />
-            ))
-          : communities.map((communityTarget) => (
-              <CommunityTargetShowcase
-                key={communityTarget.id}
-                communityTarget={communityTarget}
-              />
             ))}
+          </div>
+        )}
       </div>
     </div>
   );
