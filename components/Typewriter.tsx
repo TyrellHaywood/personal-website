@@ -50,8 +50,14 @@ const TypeWriter = () => {
   }, [displayedText, isDeleting, typingSpeed, sentences, currentSentenceIndex]);
 
   return (
-    <div className="border border-black w-full h-[45px] flex items-center pl-2 p-font font-light text-xl lg:text-3xl">
-      {"> " + displayedText + "|"}
+    <div className="border-[1px] border-[--cblue] w-full h-auto min-h-[45px] flex items-center pl-2 p-font font-light text-xl lg:text-3xl relative">
+      {"> " + displayedText}
+      <div className="w-[1px] h-full min-h-[40px] bg-black"></div>
+      {/* corners */}
+      <div className="w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -left-[5px]"></div>
+      <div className="w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -right-[5px] "></div>
+      <div className="w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -left-[5px]"></div>
+      <div className="w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -right-[5px]"></div>
     </div>
   );
 };
