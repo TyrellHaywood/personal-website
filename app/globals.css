@@ -11,6 +11,10 @@
   --cgreen: #9ECB45;
 }
 
+* {
+  cursor: url('/images/cursor.svg'), auto;
+}
+
 .background {
   background-color: var(--bg-color);
 }
