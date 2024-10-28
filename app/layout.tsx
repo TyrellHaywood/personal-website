@@ -1,6 +1,8 @@
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import InteractiveBackground from "@/components/InteractiveBackground";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -22,7 +24,10 @@ export default function RootLayout({
           rel="stylesheet"
         ></link>
       </head>
-      <body className="background">{children}</body>
+      <body className="background">
+        <InteractiveBackground />
+        {children}
+      </body>
     </html>
   );
 }

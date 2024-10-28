@@ -22,12 +22,14 @@ interface CommunityTabProps {
   community: Community;
   isSelected: boolean;
   onClick: (id: number) => void;
+  setHoveredCommunityId: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
 const CommunityTab = ({
   community,
   isSelected,
   onClick,
+  setHoveredCommunityId,
 }: CommunityTabProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -47,8 +49,14 @@ const CommunityTab = ({
           ? "rgba(0, 0, 0, 0.07)"
           : "rgba(0, 0, 0, 0.05)",
       }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
+      onHoverStart={() => {
+        setIsHovered(true);
+        setHoveredCommunityId(community.id);
+      }}
+      onHoverEnd={() => {
+        setIsHovered(false);
+        setHoveredCommunityId(null);
+      }}
     >
       <h3
         className={`flex-shrink-0 p-font text-xl lg:text-3xl ${

@@ -1,4 +1,12 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const transitionConfig = (delay = 0) => ({
+  type: "spring",
+  stiffness: 80,
+  duration: 0.5,
+  delay: delay,
+});
 
 interface Project {
   id: number;
@@ -8,10 +16,43 @@ interface Project {
   year: number;
 }
 
-const ProjectShowcase = ({ project }: { project: Project }) => {
+interface ProjectShowcaseProps {
+  project: Project;
+  isHovered: boolean;
+  uniHovered: boolean;
+  setUniHovered: React.Dispatch<React.SetStateAction<boolean>>;
+  setHoveredProjectId: React.Dispatch<React.SetStateAction<number | null>>;
+}
+
+const ProjectShowcase = ({
+  project,
+  isHovered,
+  uniHovered,
+  setUniHovered,
+  setHoveredProjectId,
+}: ProjectShowcaseProps) => {
   return (
-    <button className="h-auto md:ml-[50px] mb-6">
-      <div className="w-full h-full overflow-hidden">
+    <motion.button
+      className="h-auto md:ml-[50px] mb-6"
+      transition={transitionConfig()}
+      initial={{ opacity: 1 }}
+      animate={{
+        opacity: 1,
+      }}
+      onHoverStart={() => {
+        setHoveredProjectId(project.id);
+        setUniHovered(true);
+      }}
+      onHoverEnd={() => {
+        setHoveredProjectId(null);
+        setUniHovered(false);
+      }}
+    >
+      <div
+        className={`w-full h-full relative ${
+          isHovered ? "border-[1px] border-[--cblue] opacity-75" : ""
+        }`}
+      >
         <Image
           src="/images/placeholder.svg"
           width={600}
@@ -20,8 +61,37 @@ const ProjectShowcase = ({ project }: { project: Project }) => {
           layout="responsive"
           objectFit="contain"
         />
+        {/* corners */}
+        <div
+          className={`${
+            isHovered
+              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -left-[5px]"
+              : ""
+          }`}
+        ></div>
+        <div
+          className={`${
+            isHovered
+              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -right-[5px]"
+              : ""
+          }`}
+        ></div>
+        <div
+          className={`${
+            isHovered
+              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -left-[5px]"
+              : ""
+          }`}
+        ></div>
+        <div
+          className={`${
+            isHovered
+              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -right-[5px]"
+              : ""
+          }`}
+        ></div>
       </div>
-    </button>
+    </motion.button>
   );
 };
 

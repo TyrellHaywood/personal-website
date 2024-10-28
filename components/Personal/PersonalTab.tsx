@@ -22,9 +22,15 @@ interface PersonalTabProps {
   personal: Personal;
   isSelected: boolean;
   onClick: (id: number) => void;
+  setHoveredPersonalId: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
-const PersonalTab = ({ personal, isSelected, onClick }: PersonalTabProps) => {
+const PersonalTab = ({
+  personal,
+  isSelected,
+  onClick,
+  setHoveredPersonalId,
+}: PersonalTabProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -43,8 +49,14 @@ const PersonalTab = ({ personal, isSelected, onClick }: PersonalTabProps) => {
           ? "rgba(0, 0, 0, 0.07)"
           : "rgba(0, 0, 0, 0.05)",
       }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
+      onHoverStart={() => {
+        setIsHovered(true);
+        setHoveredPersonalId(personal.id);
+      }}
+      onHoverEnd={() => {
+        setIsHovered(false);
+        setHoveredPersonalId(null);
+      }}
     >
       <h3
         className={`flex-shrink-0 p-font text-xl lg:text-3xl ${

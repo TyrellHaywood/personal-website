@@ -1,4 +1,12 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const transitionConfig = (delay = 0) => ({
+  type: "spring",
+  stiffness: 80,
+  duration: 0.5,
+  delay: delay,
+});
 
 interface Personal {
   id: number;
@@ -8,10 +16,43 @@ interface Personal {
   year: number;
 }
 
-const PersonalShowcase = ({ personal }: { personal: Personal }) => {
+interface PersonalShowcaseProps {
+  personal: Personal;
+  isHovered: boolean;
+  uniHovered: boolean;
+  setUniHovered: React.Dispatch<React.SetStateAction<boolean>>;
+  setHoveredPersonalId: React.Dispatch<React.SetStateAction<number | null>>;
+}
+
+const PersonalShowcase = ({
+  personal,
+  isHovered,
+  uniHovered,
+  setUniHovered,
+  setHoveredPersonalId,
+}: PersonalShowcaseProps) => {
   return (
-    <button className="h-auto md:ml-[50px] mb-6">
-      <div className="w-full h-full overflow-hidden">
+    <motion.button
+      className="h-auto md:ml-[50px] mb-6"
+      transition={transitionConfig()}
+      initial={{ opacity: 1 }}
+      animate={{
+        opacity: 1,
+      }}
+      onHoverStart={() => {
+        setHoveredPersonalId(personal.id);
+        setUniHovered(true);
+      }}
+      onHoverEnd={() => {
+        setHoveredPersonalId(null);
+        setUniHovered(false);
+      }}
+    >
+      <div
+        className={`w-full h-full relative ${
+          isHovered ? "border-[1px] border-[--cblue] opacity-75" : ""
+        }`}
+      >
         <Image
           src="/images/placeholder.svg"
           width={600}
@@ -20,8 +61,37 @@ const PersonalShowcase = ({ personal }: { personal: Personal }) => {
           layout="responsive"
           objectFit="contain"
         />
+        {/* corners */}
+        <div
+          className={`${
+            isHovered
+              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -left-[5px]"
+              : ""
+          }`}
+        ></div>
+        <div
+          className={`${
+            isHovered
+              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -right-[5px]"
+              : ""
+          }`}
+        ></div>
+        <div
+          className={`${
+            isHovered
+              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -left-[5px]"
+              : ""
+          }`}
+        ></div>
+        <div
+          className={`${
+            isHovered
+              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -right-[5px]"
+              : ""
+          }`}
+        ></div>
       </div>
-    </button>
+    </motion.button>
   );
 };
 

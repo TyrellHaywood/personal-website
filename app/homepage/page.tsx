@@ -11,7 +11,7 @@ const transitionConfig = (delay = 0) => ({
 
 const Homepage = () => {
   return (
-    <div className="mt-[100px] w-full flex flex-col justify-center items-center">
+    <div className="mt-[100px] w-full flex flex-col justify-center items-center z-[999999]">
       <div className="mb-[25px] w-full">
         <h1 className="h-font text-6xl lg:text-8xl text-left">Hello,</h1>
         <h1 className="h-font text-6xl lg:text-8xl text-left">I'm Tyrell!</h1>
