@@ -22,6 +22,11 @@ const Personal = () => {
     null
   );
 
+  const [uniHovered, setUniHovered] = useState(false);
+  const [hoveredPersonalId, setHoveredPersonalId] = useState<number | null>(
+    null
+  );
+
   const togglePersonal = (id: number) => {
     setSelectedPersonalId((currentId) => (currentId === id ? null : id));
   };
@@ -60,6 +65,7 @@ const Personal = () => {
               personal={personal}
               isSelected={personal.id === selectedPersonalId}
               onClick={togglePersonal}
+              setHoveredPersonalId={setHoveredPersonalId}
             />
           ))}
         </div>
@@ -70,7 +76,14 @@ const Personal = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {personals.map((personal) => (
-              <PersonalShowcase key={personal.id} personal={personal} />
+              <PersonalShowcase
+                key={personal.id}
+                personal={personal}
+                isHovered={hoveredPersonalId === personal.id}
+                uniHovered={uniHovered}
+                setUniHovered={setUniHovered}
+                setHoveredPersonalId={setHoveredPersonalId}
+              />
             ))}
           </div>
         )}

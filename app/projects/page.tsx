@@ -19,6 +19,8 @@ const Projects = () => {
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(
     null
   );
+  const [uniHovered, setUniHovered] = useState(false);
+  const [hoveredProjectId, setHoveredProjectId] = useState<number | null>(null);
 
   const toggleProject = (id: number) => {
     setSelectedProjectId((currentId) => (currentId === id ? null : id));
@@ -30,6 +32,7 @@ const Projects = () => {
         const response = await fetch("/api/projects");
         const data = await response.json();
         setProjects(data);
+        console.log("Projects fetched:", data.length);
       } catch (error) {
         console.error("Failed to fetch projects:", error);
       }
@@ -58,6 +61,7 @@ const Projects = () => {
               project={project}
               isSelected={project.id === selectedProjectId}
               onClick={toggleProject}
+              setHoveredProjectId={setHoveredProjectId}
             />
           ))}
         </div>
@@ -68,7 +72,14 @@ const Projects = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {projects.map((project) => (
-              <ProjectShowcase key={project.id} project={project} />
+              <ProjectShowcase
+                key={project.id}
+                project={project}
+                isHovered={hoveredProjectId === project.id}
+                uniHovered={uniHovered}
+                setUniHovered={setUniHovered}
+                setHoveredProjectId={setHoveredProjectId}
+              />
             ))}
           </div>
         )}

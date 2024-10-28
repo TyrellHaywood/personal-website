@@ -21,6 +21,10 @@ const Community = () => {
   const [selectedCommunityId, setSelectedCommunityId] = useState<number | null>(
     null
   );
+  const [uniHovered, setUniHovered] = useState(false);
+  const [hoveredCommunityId, setHoveredCommunityId] = useState<number | null>(
+    null
+  );
 
   const toggleCommunity = (id: number) => {
     setSelectedCommunityId((currentId) => (currentId === id ? null : id));
@@ -60,6 +64,7 @@ const Community = () => {
               community={community}
               isSelected={community.id === selectedCommunityId}
               onClick={toggleCommunity}
+              setHoveredCommunityId={setHoveredCommunityId}
             />
           ))}
         </div>
@@ -70,7 +75,14 @@ const Community = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {communities.map((community) => (
-              <CommunityShowcase key={community.id} community={community} />
+              <CommunityShowcase
+                key={community.id}
+                community={community}
+                isHovered={hoveredCommunityId === community.id}
+                uniHovered={uniHovered}
+                setUniHovered={setUniHovered}
+                setHoveredCommunityId={setHoveredCommunityId}
+              />
             ))}
           </div>
         )}

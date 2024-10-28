@@ -22,9 +22,15 @@ interface ProjectTabProps {
   project: Project;
   isSelected: boolean;
   onClick: (id: number) => void;
+  setHoveredProjectId: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
-const ProjectTab = ({ project, isSelected, onClick }: ProjectTabProps) => {
+const ProjectTab = ({
+  project,
+  isSelected,
+  onClick,
+  setHoveredProjectId,
+}: ProjectTabProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -43,8 +49,14 @@ const ProjectTab = ({ project, isSelected, onClick }: ProjectTabProps) => {
           ? "rgba(0, 0, 0, 0.07)"
           : "rgba(0, 0, 0, 0.05)",
       }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
+      onHoverStart={() => {
+        setIsHovered(true);
+        setHoveredProjectId(project.id);
+      }}
+      onHoverEnd={() => {
+        setIsHovered(false);
+        setHoveredProjectId(null);
+      }}
     >
       <h3
         className={`flex-shrink-0 p-font text-xl lg:text-3xl ${
