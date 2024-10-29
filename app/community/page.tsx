@@ -85,7 +85,7 @@ const Community = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {communities.map((community) => (
-              <SmoothLoadingSection delay={0.4}>
+              <SmoothLoadingSection delay={0.2}>
                 <CommunityShowcase
                   key={community.id}
                   community={community}

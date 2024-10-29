@@ -85,7 +85,7 @@ const Personal = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {personals.map((personal) => (
-              <SmoothLoadingSection delay={0.4}>
+              <SmoothLoadingSection delay={0.2}>
                 <PersonalShowcase
                   key={personal.id}
                   personal={personal}

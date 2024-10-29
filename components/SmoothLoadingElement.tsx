@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { ReactNode, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const transitionConfig = (delay = 0) => ({
   type: "spring",
@@ -16,16 +16,23 @@ export default function SmoothLoadingSection({
   children: ReactNode;
   delay?: number;
 }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <motion.div
+      ref={ref}
       className="w-full"
       initial={{ opacity: 0, y: 50 }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-        transition: transitionConfig(delay),
-      }}
-      viewport={{ once: true }}
+      animate={
+        isInView
+          ? {
+              opacity: 1,
+              y: 0,
+              transition: transitionConfig(delay),
+            }
+          : { opacity: 0, y: 50 }
+      }
     >
       {children}
     </motion.div>
