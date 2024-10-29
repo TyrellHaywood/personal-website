@@ -8,6 +8,8 @@ import CommunityTargetShowcase from "@/components/Community/CommunityTarget";
 import CircleGreen from "@/components/CircleGreen";
 import CircleRed from "@/components/CircleRed";
 
+import SmoothLoadingSection from "@/components/SmoothLoadingElement";
+
 interface Community {
   id: number;
   title: string;
@@ -52,21 +54,28 @@ const Community = () => {
   return (
     <div className="w-full flex flex-col md:flex-row justify-center md:justify-start items-start my-[100px]">
       <div className="w-[90vw] md:w-2/5">
-        <div className="flex flex-row space-x-[15px]">
-          <CircleGreen />
-          <CircleRed />
-        </div>
-        <h2 className="h-font my-[25px] text-2xl lg:text-4x">Community</h2>
+        <SmoothLoadingSection delay={0}>
+          <div className="flex flex-row space-x-[15px]">
+            <CircleGreen />
+            <CircleRed />
+          </div>
+        </SmoothLoadingSection>
+        <SmoothLoadingSection delay={0.2}>
+          <h2 className="h-font my-[25px] text-2xl lg:text-4x">Community</h2>
+        </SmoothLoadingSection>
+
         <div className="w-full">
           {communities.map((community) => (
-            <CommunityTab
-              key={community.id}
-              community={community}
-              isSelected={community.id === selectedCommunityId}
-              onClick={toggleCommunity}
-              isHovered={hoveredCommunityId === community.id}
-              setHoveredCommunityId={setHoveredCommunityId}
-            />
+            <SmoothLoadingSection delay={0.4}>
+              <CommunityTab
+                key={community.id}
+                community={community}
+                isSelected={community.id === selectedCommunityId}
+                onClick={toggleCommunity}
+                isHovered={hoveredCommunityId === community.id}
+                setHoveredCommunityId={setHoveredCommunityId}
+              />
+            </SmoothLoadingSection>
           ))}
         </div>
       </div>
@@ -76,15 +85,17 @@ const Community = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {communities.map((community) => (
-              <CommunityShowcase
-                key={community.id}
-                community={community}
-                onClick={toggleCommunity}
-                isHovered={hoveredCommunityId === community.id}
-                uniHovered={uniHovered}
-                setUniHovered={setUniHovered}
-                setHoveredCommunityId={setHoveredCommunityId}
-              />
+              <SmoothLoadingSection delay={0.4}>
+                <CommunityShowcase
+                  key={community.id}
+                  community={community}
+                  onClick={toggleCommunity}
+                  isHovered={hoveredCommunityId === community.id}
+                  uniHovered={uniHovered}
+                  setUniHovered={setUniHovered}
+                  setHoveredCommunityId={setHoveredCommunityId}
+                />
+              </SmoothLoadingSection>
             ))}
           </div>
         )}

@@ -6,6 +6,8 @@ import ProjectShowcase from "@/components/Project/ProjectShowcase";
 import ProjectTargetShowcase from "@/components/Project/ProjectTarget";
 import CircleGreen from "@/components/CircleGreen";
 
+import SmoothLoadingSection from "@/components/SmoothLoadingElement";
+
 interface Project {
   id: number;
   title: string;
@@ -49,23 +51,29 @@ const Projects = () => {
   return (
     <div className="w-full flex flex-col md:flex-row justify-center md:justify-start items-start my-[100px]">
       <div className="w-[90vw] md:w-2/5">
-        <div className="flex flex-row space-x-[15px]">
-          <CircleGreen />
-          <CircleGreen />
-        </div>
-        <h2 className="h-font my-[25px] text-2xl lg:text-4x">Software</h2>
-        <div className="w-full">
-          {projects.map((project) => (
-            <ProjectTab
-              key={project.id}
-              project={project}
-              isSelected={project.id === selectedProjectId}
-              onClick={toggleProject}
-              isHovered={hoveredProjectId === project.id}
-              setHoveredProjectId={setHoveredProjectId}
-            />
-          ))}
-        </div>
+        <SmoothLoadingSection delay={0}>
+          <div className="flex flex-row space-x-[15px]">
+            <CircleGreen />
+            <CircleGreen />
+          </div>
+        </SmoothLoadingSection>
+        <SmoothLoadingSection delay={0.2}>
+          <h2 className="h-font my-[25px] text-2xl lg:text-4x">Software</h2>
+        </SmoothLoadingSection>
+        <SmoothLoadingSection delay={0.4}>
+          <div className="w-full">
+            {projects.map((project) => (
+              <ProjectTab
+                key={project.id}
+                project={project}
+                isSelected={project.id === selectedProjectId}
+                onClick={toggleProject}
+                isHovered={hoveredProjectId === project.id}
+                setHoveredProjectId={setHoveredProjectId}
+              />
+            ))}
+          </div>
+        </SmoothLoadingSection>
       </div>
       <div className="w-full md:w-3/5 flex justify-center items-start">
         {selectedProject ? (
@@ -73,15 +81,17 @@ const Projects = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {projects.map((project) => (
-              <ProjectShowcase
-                key={project.id}
-                project={project}
-                onClick={toggleProject}
-                isHovered={hoveredProjectId === project.id}
-                uniHovered={uniHovered}
-                setUniHovered={setUniHovered}
-                setHoveredProjectId={setHoveredProjectId}
-              />
+              <SmoothLoadingSection delay={0.4}>
+                <ProjectShowcase
+                  key={project.id}
+                  project={project}
+                  onClick={toggleProject}
+                  isHovered={hoveredProjectId === project.id}
+                  uniHovered={uniHovered}
+                  setUniHovered={setUniHovered}
+                  setHoveredProjectId={setHoveredProjectId}
+                />
+              </SmoothLoadingSection>
             ))}
           </div>
         )}
