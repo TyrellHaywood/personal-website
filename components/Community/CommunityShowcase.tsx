@@ -18,6 +18,7 @@ interface Community {
 
 interface CommunityShowcaseProps {
   community: Community;
+  onClick: (id: number) => void;
   isHovered: boolean;
   uniHovered: boolean;
   setUniHovered: React.Dispatch<React.SetStateAction<boolean>>;
@@ -26,6 +27,7 @@ interface CommunityShowcaseProps {
 
 const CommunityShowcase = ({
   community,
+  onClick,
   isHovered,
   uniHovered,
   setUniHovered,
@@ -34,6 +36,7 @@ const CommunityShowcase = ({
   return (
     <motion.button
       className="h-auto md:ml-[50px] mb-6"
+      onClick={() => onClick(community.id)}
       transition={transitionConfig()}
       initial={{ opacity: 1 }}
       animate={{

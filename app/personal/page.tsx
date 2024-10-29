@@ -65,6 +65,7 @@ const Personal = () => {
               personal={personal}
               isSelected={personal.id === selectedPersonalId}
               onClick={togglePersonal}
+              isHovered={hoveredPersonalId === personal.id}
               setHoveredPersonalId={setHoveredPersonalId}
             />
           ))}
@@ -79,6 +80,7 @@ const Personal = () => {
               <PersonalShowcase
                 key={personal.id}
                 personal={personal}
+                onClick={togglePersonal}
                 isHovered={hoveredPersonalId === personal.id}
                 uniHovered={uniHovered}
                 setUniHovered={setUniHovered}

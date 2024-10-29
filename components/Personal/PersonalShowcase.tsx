@@ -18,6 +18,7 @@ interface Personal {
 
 interface PersonalShowcaseProps {
   personal: Personal;
+  onClick: (id: number) => void;
   isHovered: boolean;
   uniHovered: boolean;
   setUniHovered: React.Dispatch<React.SetStateAction<boolean>>;
@@ -26,6 +27,7 @@ interface PersonalShowcaseProps {
 
 const PersonalShowcase = ({
   personal,
+  onClick,
   isHovered,
   uniHovered,
   setUniHovered,
@@ -34,6 +36,7 @@ const PersonalShowcase = ({
   return (
     <motion.button
       className="h-auto md:ml-[50px] mb-6"
+      onClick={() => onClick(personal.id)}
       transition={transitionConfig()}
       initial={{ opacity: 1 }}
       animate={{

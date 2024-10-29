@@ -32,7 +32,7 @@ const Projects = () => {
         const response = await fetch("/api/projects");
         const data = await response.json();
         setProjects(data);
-        console.log("Projects fetched:", data.length);
+        console.log("Projects fetched:", data);
       } catch (error) {
         console.error("Failed to fetch projects:", error);
       }
@@ -61,6 +61,7 @@ const Projects = () => {
               project={project}
               isSelected={project.id === selectedProjectId}
               onClick={toggleProject}
+              isHovered={hoveredProjectId === project.id}
               setHoveredProjectId={setHoveredProjectId}
             />
           ))}
@@ -75,6 +76,7 @@ const Projects = () => {
               <ProjectShowcase
                 key={project.id}
                 project={project}
+                onClick={toggleProject}
                 isHovered={hoveredProjectId === project.id}
                 uniHovered={uniHovered}
                 setUniHovered={setUniHovered}

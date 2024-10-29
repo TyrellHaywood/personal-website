@@ -18,6 +18,7 @@ interface Project {
 
 interface ProjectShowcaseProps {
   project: Project;
+  onClick: (id: number) => void;
   isHovered: boolean;
   uniHovered: boolean;
   setUniHovered: React.Dispatch<React.SetStateAction<boolean>>;
@@ -26,6 +27,7 @@ interface ProjectShowcaseProps {
 
 const ProjectShowcase = ({
   project,
+  onClick,
   isHovered,
   uniHovered,
   setUniHovered,
@@ -34,6 +36,7 @@ const ProjectShowcase = ({
   return (
     <motion.button
       className="h-auto md:ml-[50px] mb-6"
+      onClick={() => onClick(project.id)}
       transition={transitionConfig()}
       initial={{ opacity: 1 }}
       animate={{

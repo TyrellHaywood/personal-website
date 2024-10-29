@@ -21,6 +21,7 @@ interface Project {
 interface ProjectTabProps {
   project: Project;
   isSelected: boolean;
+  isHovered: boolean;
   onClick: (id: number) => void;
   setHoveredProjectId: React.Dispatch<React.SetStateAction<number | null>>;
 }
@@ -28,11 +29,10 @@ interface ProjectTabProps {
 const ProjectTab = ({
   project,
   isSelected,
+  isHovered,
   onClick,
   setHoveredProjectId,
 }: ProjectTabProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <motion.button
       className="w-full h-[25px] lg:h-[45px] flex items-center my-[10px]"
@@ -40,9 +40,10 @@ const ProjectTab = ({
       transition={transitionConfig()}
       initial={{ backgroundColor: "transparent" }}
       animate={{
-        backgroundColor: isSelected
-          ? "rgba(0, 0, 0, 0.05)"
-          : "rgba(0, 0, 0, 0.0)",
+        backgroundColor:
+          isSelected || isHovered
+            ? "rgba(0, 0, 0, 0.05)"
+            : "rgba(0, 0, 0, 0.0)",
       }}
       whileHover={{
         backgroundColor: isSelected
@@ -50,11 +51,9 @@ const ProjectTab = ({
           : "rgba(0, 0, 0, 0.05)",
       }}
       onHoverStart={() => {
-        setIsHovered(true);
         setHoveredProjectId(project.id);
       }}
       onHoverEnd={() => {
-        setIsHovered(false);
         setHoveredProjectId(null);
       }}
     >

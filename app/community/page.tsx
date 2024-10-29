@@ -64,6 +64,7 @@ const Community = () => {
               community={community}
               isSelected={community.id === selectedCommunityId}
               onClick={toggleCommunity}
+              isHovered={hoveredCommunityId === community.id}
               setHoveredCommunityId={setHoveredCommunityId}
             />
           ))}
@@ -78,6 +79,7 @@ const Community = () => {
               <CommunityShowcase
                 key={community.id}
                 community={community}
+                onClick={toggleCommunity}
                 isHovered={hoveredCommunityId === community.id}
                 uniHovered={uniHovered}
                 setUniHovered={setUniHovered}
