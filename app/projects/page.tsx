@@ -81,7 +81,7 @@ const Projects = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {projects.map((project) => (
-              <SmoothLoadingSection delay={0.4}>
+              <SmoothLoadingSection delay={0.2}>
                 <ProjectShowcase
                   key={project.id}
                   project={project}
