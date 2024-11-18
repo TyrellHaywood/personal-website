@@ -12,6 +12,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Tyrell Haywood</title>
+        <meta
+          name="description"
+          content="Tyrell Haywood — Creative software developer and computer science student passionate about building unique projects. Let’s share ideas!"
+        />
         <link rel="icon" type="image/svg+xml" href="/logo-black.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
