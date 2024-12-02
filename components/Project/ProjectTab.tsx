@@ -35,7 +35,7 @@ const ProjectTab = ({
 }: ProjectTabProps) => {
   return (
     <motion.button
-      className="w-full h-[25px] lg:h-[45px] flex items-center my-[10px]"
+      className="w-full h-[25px] lg:h-[45px] flex items-center py-4"
       onClick={() => onClick(project.id)}
       transition={transitionConfig()}
       initial={{ backgroundColor: "transparent" }}
