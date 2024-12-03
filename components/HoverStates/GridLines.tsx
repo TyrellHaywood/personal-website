@@ -18,7 +18,10 @@ const GridLines = ({ isHovered, index, projects }: GridLinesProps) => {
       {/* right */}
       <div
         className={`${
-          index % 2 == 0 && projects.length >= 2 && isHovered // and index isnt last even element (bottom left of grid)
+          index % 2 == 0 &&
+          index != projects.length - 1 &&
+          projects.length >= 2 &&
+          isHovered // and index isnt last even element (bottom left of grid)
             ? "w-[66px] h-[1px] bg-[--corange] absolute -right-[66px] top-1/2"
             : "hidden"
         } `}
