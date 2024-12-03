@@ -80,11 +80,13 @@ const Projects = () => {
           <ProjectTargetShowcase project={selectedProject} />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <SmoothLoadingSection delay={0.2}>
                 <ProjectShowcase
                   key={project.id}
                   project={project}
+                  index={index}
+                  projects={projects}
                   onClick={toggleProject}
                   isHovered={hoveredProjectId === project.id}
                   uniHovered={uniHovered}

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import TileCorners from "../TileCorners";
+
 const transitionConfig = (delay = 0) => ({
   type: "spring",
   stiffness: 80,
@@ -18,6 +20,8 @@ interface Project {
 
 interface ProjectShowcaseProps {
   project: Project;
+  index: number;
+  projects: Project[];
   onClick: (id: number) => void;
   isHovered: boolean;
   uniHovered: boolean;
@@ -27,6 +31,8 @@ interface ProjectShowcaseProps {
 
 const ProjectShowcase = ({
   project,
+  index,
+  projects,
   onClick,
   isHovered,
   uniHovered,
@@ -65,34 +71,7 @@ const ProjectShowcase = ({
           objectFit="contain"
         />
         {/* corners */}
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -left-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -right-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -left-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -right-[5px]"
-              : ""
-          }`}
-        ></div>
+        <TileCorners isHovered={isHovered} />
       </div>
     </motion.button>
   );

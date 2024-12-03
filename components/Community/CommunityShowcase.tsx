@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import TileCorners from "../TileCorners";
+
 const transitionConfig = (delay = 0) => ({
   type: "spring",
   stiffness: 80,
@@ -65,34 +67,7 @@ const CommunityShowcase = ({
           objectFit="contain"
         />
         {/* corners */}
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -left-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -right-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -left-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -right-[5px]"
-              : ""
-          }`}
-        ></div>
+        <TileCorners isHovered={isHovered} />
       </div>
     </motion.button>
   );
