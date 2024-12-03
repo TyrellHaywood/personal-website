@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import TileCorners from "../TileCorners";
+// components
+import TileCorners from "../HoverStates/TileCorners";
+import GridLines from "../HoverStates/GridLines";
 
 const transitionConfig = (delay = 0) => ({
   type: "spring",
@@ -72,6 +74,10 @@ const ProjectShowcase = ({
         />
         {/* corners */}
         <TileCorners isHovered={isHovered} />
+
+        {/* grid lines */}
+
+        <GridLines index={index} isHovered={isHovered} projects={projects} />
       </div>
     </motion.button>
   );

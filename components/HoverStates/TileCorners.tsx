@@ -5,6 +5,7 @@ interface TileCornersProps {
 const TileCorners = ({ isHovered }: TileCornersProps) => {
   return (
     <>
+      {/* top left */}
       <div
         className={`${
           isHovered
@@ -12,6 +13,7 @@ const TileCorners = ({ isHovered }: TileCornersProps) => {
             : ""
         }`}
       ></div>
+      {/* top right */}
       <div
         className={`${
           isHovered
@@ -19,6 +21,7 @@ const TileCorners = ({ isHovered }: TileCornersProps) => {
             : ""
         }`}
       ></div>
+      {/* bottom left */}
       <div
         className={`${
           isHovered
@@ -26,6 +29,7 @@ const TileCorners = ({ isHovered }: TileCornersProps) => {
             : ""
         }`}
       ></div>
+      {/* bottom right */}
       <div
         className={`${
           isHovered

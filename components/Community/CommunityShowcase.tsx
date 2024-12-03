@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import TileCorners from "../TileCorners";
+import TileCorners from "../HoverStates/TileCorners";
 
 const transitionConfig = (delay = 0) => ({
   type: "spring",
