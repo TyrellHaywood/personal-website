@@ -43,7 +43,7 @@ const ProjectShowcase = ({
 }: ProjectShowcaseProps) => {
   return (
     <motion.button
-      className="h-auto md:ml-[50px] mb-6"
+      className="h-auto"
       onClick={() => onClick(project.id)}
       transition={transitionConfig()}
       initial={{ opacity: 1 }}
@@ -72,11 +72,11 @@ const ProjectShowcase = ({
           layout="responsive"
           objectFit="contain"
         />
+
         {/* corners */}
         <TileCorners isHovered={isHovered} />
 
         {/* grid lines */}
-
         <GridLines index={index} isHovered={isHovered} projects={projects} />
       </div>
     </motion.button>

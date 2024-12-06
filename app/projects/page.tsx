@@ -79,7 +79,7 @@ const Projects = () => {
         {selectedProject ? (
           <ProjectTargetShowcase project={selectedProject} />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:ml-12">
             {projects.map((project, index) => (
               <SmoothLoadingSection delay={0.2}>
                 <ProjectShowcase
