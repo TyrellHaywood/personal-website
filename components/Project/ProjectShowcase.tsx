@@ -62,7 +62,7 @@ const ProjectShowcase = ({
     >
       <div
         className={`w-full h-full relative ${
-          isHovered ? "border-[1px] border-[--cblue] opacity-75" : ""
+          isHovered ? "border-[1px] border-[--cblue] opacity-85" : ""
         }`}
       >
         <Image
@@ -94,6 +94,17 @@ const ProjectShowcase = ({
             sharedObjectType={projects}
           />
         </div>
+        <h3
+          className={`p-1 flex-shrink-0 p-font text-xl lg:text-3xl text-left font-light`}
+        >
+          {project.title}
+        </h3>
+        <p
+          className={`p-1 flex-shrink-0 p-font text-sm md:text-base lg:text-xl text-left font-light
+          `}
+        >
+          {project.description}
+        </p>
       </div>
     </motion.button>
   );

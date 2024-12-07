@@ -94,6 +94,17 @@ const PersonalShowcase = ({
             sharedObjectType={personals}
           />
         </div>
+        <h3
+          className={`p-1 flex-shrink-0 p-font text-xl lg:text-3xl text-left font-light`}
+        >
+          {personal.title}
+        </h3>
+        <p
+          className={`p-1 flex-shrink-0 p-font text-sm md:text-base lg:text-xl text-left font-light
+          `}
+        >
+          {personal.description}
+        </p>
       </div>
     </motion.button>
   );

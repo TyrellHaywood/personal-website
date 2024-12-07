@@ -93,6 +93,17 @@ const CommunityShowcase = ({
             sharedObjectType={communities}
           />
         </div>
+        <h3
+          className={`p-1 flex-shrink-0 p-font text-xl lg:text-3xl text-left font-light`}
+        >
+          {community.title}
+        </h3>
+        <p
+          className={`p-1 flex-shrink-0 p-font text-sm md:text-base lg:text-xl text-left font-light
+          `}
+        >
+          {community.description}
+        </p>
       </div>
     </motion.button>
   );
