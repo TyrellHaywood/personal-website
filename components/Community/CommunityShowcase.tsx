@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+// components
+import TileCorners from "../HoverStates/TileCorners";
+import GridLinesDesktop from "../HoverStates/GridLinesDesktop";
+import GridLinesMobile from "../HoverStates/GridLinesMobile";
+
 const transitionConfig = (delay = 0) => ({
   type: "spring",
   stiffness: 80,
@@ -18,6 +23,8 @@ interface Community {
 
 interface CommunityShowcaseProps {
   community: Community;
+  index: number;
+  communities: Community[];
   onClick: (id: number) => void;
   isHovered: boolean;
   uniHovered: boolean;
@@ -27,6 +34,8 @@ interface CommunityShowcaseProps {
 
 const CommunityShowcase = ({
   community,
+  index,
+  communities,
   onClick,
   isHovered,
   uniHovered,
@@ -65,34 +74,25 @@ const CommunityShowcase = ({
           objectFit="contain"
         />
         {/* corners */}
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -left-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -right-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -left-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -right-[5px]"
-              : ""
-          }`}
-        ></div>
+        <TileCorners isHovered={isHovered} />
+
+        {/* grid lines */}
+        {/* desktop */}
+        <div className="hidden md:block">
+          <GridLinesDesktop
+            index={index}
+            isHovered={isHovered}
+            sharedObjectType={communities}
+          />
+        </div>
+        {/* mobile */}
+        <div className="block md:hidden">
+          <GridLinesMobile
+            index={index}
+            isHovered={isHovered}
+            sharedObjectType={communities}
+          />
+        </div>
       </div>
     </motion.button>
   );

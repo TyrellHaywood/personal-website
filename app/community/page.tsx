@@ -53,7 +53,8 @@ const Community = () => {
 
   return (
     <div className="w-full flex flex-col md:flex-row justify-center md:justify-start items-start my-[100px]">
-      <div className="w-[90vw] md:w-2/5">
+      {/* left Column */}
+      <div className="w-[90vw] md:w-2/5 sticky top-6 self-start">
         <SmoothLoadingSection delay={0}>
           <div className="flex flex-row space-x-[15px]">
             <CircleGreen />
@@ -64,7 +65,7 @@ const Community = () => {
           <h2 className="h-font my-[25px] text-2xl lg:text-4x">Community</h2>
         </SmoothLoadingSection>
 
-        <div className="w-full">
+        <div className="w-full mb-[25px] md:mb-0">
           {communities.map((community) => (
             <SmoothLoadingSection delay={0.4}>
               <CommunityTab
@@ -79,16 +80,20 @@ const Community = () => {
           ))}
         </div>
       </div>
+
+      {/* right Column */}
       <div className="w-full md:w-3/5 flex justify-center items-start">
         {selectedCommunity ? (
           <CommunityTargetShowcase community={selectedCommunity} />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {communities.map((community) => (
+            {communities.map((community, index) => (
               <SmoothLoadingSection delay={0.2}>
                 <CommunityShowcase
                   key={community.id}
                   community={community}
+                  index={index}
+                  communities={communities}
                   onClick={toggleCommunity}
                   isHovered={hoveredCommunityId === community.id}
                   uniHovered={uniHovered}

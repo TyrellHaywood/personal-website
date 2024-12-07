@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+// components
+import TileCorners from "../HoverStates/TileCorners";
+import GridLinesDesktop from "../HoverStates/GridLinesDesktop";
+import GridLinesMobile from "../HoverStates/GridLinesMobile";
+
 const transitionConfig = (delay = 0) => ({
   type: "spring",
   stiffness: 80,
@@ -18,6 +23,8 @@ interface Personal {
 
 interface PersonalShowcaseProps {
   personal: Personal;
+  index: number;
+  personals: Personal[];
   onClick: (id: number) => void;
   isHovered: boolean;
   uniHovered: boolean;
@@ -27,6 +34,8 @@ interface PersonalShowcaseProps {
 
 const PersonalShowcase = ({
   personal,
+  index,
+  personals,
   onClick,
   isHovered,
   uniHovered,
@@ -64,35 +73,27 @@ const PersonalShowcase = ({
           layout="responsive"
           objectFit="contain"
         />
+
         {/* corners */}
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -left-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -right-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -left-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -right-[5px]"
-              : ""
-          }`}
-        ></div>
+        <TileCorners isHovered={isHovered} />
+
+        {/* grid lines */}
+        {/* desktop */}
+        <div className="hidden md:block">
+          <GridLinesDesktop
+            index={index}
+            isHovered={isHovered}
+            sharedObjectType={personals}
+          />
+        </div>
+        {/* mobile */}
+        <div className="block md:hidden">
+          <GridLinesMobile
+            index={index}
+            isHovered={isHovered}
+            sharedObjectType={personals}
+          />
+        </div>
       </div>
     </motion.button>
   );

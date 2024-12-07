@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+// components
+import TileCorners from "../HoverStates/TileCorners";
+import GridLinesDesktop from "../HoverStates/GridLinesDesktop";
+import GridLinesMobile from "../HoverStates/GridLinesMobile";
+
 const transitionConfig = (delay = 0) => ({
   type: "spring",
   stiffness: 80,
@@ -18,6 +23,8 @@ interface Project {
 
 interface ProjectShowcaseProps {
   project: Project;
+  index: number;
+  projects: Project[];
   onClick: (id: number) => void;
   isHovered: boolean;
   uniHovered: boolean;
@@ -27,6 +34,8 @@ interface ProjectShowcaseProps {
 
 const ProjectShowcase = ({
   project,
+  index,
+  projects,
   onClick,
   isHovered,
   uniHovered,
@@ -35,7 +44,7 @@ const ProjectShowcase = ({
 }: ProjectShowcaseProps) => {
   return (
     <motion.button
-      className="h-auto md:ml-[50px] mb-6"
+      className="h-auto"
       onClick={() => onClick(project.id)}
       transition={transitionConfig()}
       initial={{ opacity: 1 }}
@@ -64,35 +73,27 @@ const ProjectShowcase = ({
           layout="responsive"
           objectFit="contain"
         />
+
         {/* corners */}
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -left-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -top-[5px] -right-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -left-[5px]"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`${
-            isHovered
-              ? "w-[10px] h-[10px] bg-white border-[1px] border-[--cblue] absolute -bottom-[5px] -right-[5px]"
-              : ""
-          }`}
-        ></div>
+        <TileCorners isHovered={isHovered} />
+
+        {/* grid lines */}
+        {/* desktop */}
+        <div className="hidden md:block">
+          <GridLinesDesktop
+            index={index}
+            isHovered={isHovered}
+            sharedObjectType={projects}
+          />
+        </div>
+        {/* mobile */}
+        <div className="block md:hidden">
+          <GridLinesMobile
+            index={index}
+            isHovered={isHovered}
+            sharedObjectType={projects}
+          />
+        </div>
       </div>
     </motion.button>
   );
