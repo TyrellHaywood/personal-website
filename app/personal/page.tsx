@@ -64,7 +64,7 @@ const Personal = () => {
         <SmoothLoadingSection delay={0.2}>
           <h2 className="h-font my-[25px] text-2xl lg:text-4x">Personal</h2>
         </SmoothLoadingSection>
-        <div className="w-full">
+        <div className="w-full mb-[25px] md:mb-0">
           {personals.map((personal) => (
             <SmoothLoadingSection delay={0.4}>
               <PersonalTab

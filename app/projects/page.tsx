@@ -61,7 +61,7 @@ const Projects = () => {
           <h2 className="h-font my-[25px] text-2xl lg:text-4x">Software</h2>
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.4}>
-          <div className="w-full">
+          <div className="w-full mb-[25px] md:mb-0">
             {projects.map((project) => (
               <ProjectTab
                 key={project.id}

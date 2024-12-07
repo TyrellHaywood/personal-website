@@ -64,7 +64,7 @@ const Community = () => {
           <h2 className="h-font my-[25px] text-2xl lg:text-4x">Community</h2>
         </SmoothLoadingSection>
 
-        <div className="w-full">
+        <div className="w-full mb-[25px] md:mb-0">
           {communities.map((community) => (
             <SmoothLoadingSection delay={0.4}>
               <CommunityTab

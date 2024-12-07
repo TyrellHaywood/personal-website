@@ -9,13 +9,17 @@ interface Project {
   year: number;
 }
 
-interface GridLinesProps {
+interface GridLinesDesktopProps {
   index: number;
   isHovered: boolean;
   projects: Project[];
 }
 
-const GridLines = ({ isHovered, index, projects }: GridLinesProps) => {
+const GridLinesDesktop = ({
+  isHovered,
+  index,
+  projects,
+}: GridLinesDesktopProps) => {
   return (
     <>
       {/* right */}
@@ -82,4 +86,4 @@ const GridLines = ({ isHovered, index, projects }: GridLinesProps) => {
   );
 };
 
-export default GridLines;
+export default GridLinesDesktop;

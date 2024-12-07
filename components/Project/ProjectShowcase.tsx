@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 
 // components
 import TileCorners from "../HoverStates/TileCorners";
-import GridLines from "../HoverStates/GridLines";
+import GridLinesDesktop from "../HoverStates/GridLinesDesktop";
+import GridLinesMobile from "../HoverStates/GridLinesMobile";
 
 const transitionConfig = (delay = 0) => ({
   type: "spring",
@@ -77,7 +78,22 @@ const ProjectShowcase = ({
         <TileCorners isHovered={isHovered} />
 
         {/* grid lines */}
-        <GridLines index={index} isHovered={isHovered} projects={projects} />
+        {/* desktop */}
+        <div className="hidden md:block">
+          <GridLinesDesktop
+            index={index}
+            isHovered={isHovered}
+            projects={projects}
+          />
+        </div>
+        {/* mobile */}
+        <div className="block md:hidden">
+          <GridLinesMobile
+            index={index}
+            isHovered={isHovered}
+            projects={projects}
+          />
+        </div>
       </div>
     </motion.button>
   );
