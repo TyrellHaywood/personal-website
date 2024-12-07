@@ -84,11 +84,13 @@ const Community = () => {
           <CommunityTargetShowcase community={selectedCommunity} />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {communities.map((community) => (
+            {communities.map((community, index) => (
               <SmoothLoadingSection delay={0.2}>
                 <CommunityShowcase
                   key={community.id}
                   community={community}
+                  index={index}
+                  communities={communities}
                   onClick={toggleCommunity}
                   isHovered={hoveredCommunityId === community.id}
                   uniHovered={uniHovered}

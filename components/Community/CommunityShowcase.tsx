@@ -1,7 +1,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+// components
 import TileCorners from "../HoverStates/TileCorners";
+import GridLinesDesktop from "../HoverStates/GridLinesDesktop";
+import GridLinesMobile from "../HoverStates/GridLinesMobile";
 
 const transitionConfig = (delay = 0) => ({
   type: "spring",
@@ -20,6 +23,8 @@ interface Community {
 
 interface CommunityShowcaseProps {
   community: Community;
+  index: number;
+  communities: Community[];
   onClick: (id: number) => void;
   isHovered: boolean;
   uniHovered: boolean;
@@ -29,6 +34,8 @@ interface CommunityShowcaseProps {
 
 const CommunityShowcase = ({
   community,
+  index,
+  communities,
   onClick,
   isHovered,
   uniHovered,
@@ -68,6 +75,24 @@ const CommunityShowcase = ({
         />
         {/* corners */}
         <TileCorners isHovered={isHovered} />
+
+        {/* grid lines */}
+        {/* desktop */}
+        <div className="hidden md:block">
+          <GridLinesDesktop
+            index={index}
+            isHovered={isHovered}
+            sharedObjectType={communities}
+          />
+        </div>
+        {/* mobile */}
+        <div className="block md:hidden">
+          <GridLinesMobile
+            index={index}
+            isHovered={isHovered}
+            sharedObjectType={communities}
+          />
+        </div>
       </div>
     </motion.button>
   );

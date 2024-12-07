@@ -1,7 +1,7 @@
 // components
 import DistanceBox from "./DistanceBox";
 
-interface Project {
+interface SharedObject {
   id: number;
   title: string;
   image: string;
@@ -12,13 +12,13 @@ interface Project {
 interface GridLinesDesktopProps {
   index: number;
   isHovered: boolean;
-  projects: Project[];
+  sharedObjectType: SharedObject[];
 }
 
 const GridLinesDesktop = ({
   isHovered,
   index,
-  projects,
+  sharedObjectType,
 }: GridLinesDesktopProps) => {
   return (
     <>
@@ -26,8 +26,8 @@ const GridLinesDesktop = ({
       <div
         className={`${
           index % 2 == 0 &&
-          index != projects.length - 1 &&
-          projects.length >= 2 &&
+          index != sharedObjectType.length - 1 &&
+          sharedObjectType.length >= 2 &&
           isHovered // and index isnt last even element (bottom left of grid)
             ? "w-[58px] h-[1px] absolute -right-[58px] top-1/2 flex justify-center"
             : "hidden"
@@ -42,8 +42,8 @@ const GridLinesDesktop = ({
       {/* bottom */}
       <div
         className={`${
-          index !== projects.length - 2 &&
-          index !== projects.length - 1 &&
+          index !== sharedObjectType.length - 2 &&
+          index !== sharedObjectType.length - 1 &&
           isHovered
             ? "w-[1px] h-16 absolute -bottom-16 left-1/2 flex items-center"
             : "hidden"
@@ -58,7 +58,7 @@ const GridLinesDesktop = ({
       {/* left */}
       <div
         className={`${
-          index % 2 == 1 && projects.length >= 2 && isHovered
+          index % 2 == 1 && sharedObjectType.length >= 2 && isHovered
             ? "w-[58px] h-[1px] absolute -left-[58px] top-1/2 flex justify-center"
             : "hidden"
         } `}

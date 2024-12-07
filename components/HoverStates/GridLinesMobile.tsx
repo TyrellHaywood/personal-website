@@ -1,7 +1,7 @@
 // components
 import DistanceBox from "./DistanceBox";
 
-interface Project {
+interface SharedObject {
   id: number;
   title: string;
   image: string;
@@ -12,20 +12,20 @@ interface Project {
 interface GridLinesMobileProps {
   index: number;
   isHovered: boolean;
-  projects: Project[];
+  sharedObjectType: SharedObject[];
 }
 
 const GridLinesMobile = ({
   isHovered,
   index,
-  projects,
+  sharedObjectType,
 }: GridLinesMobileProps) => {
   return (
     <>
       {/* bottom */}
       <div
         className={`${
-          index !== projects.length - 1 && isHovered
+          index !== sharedObjectType.length - 1 && isHovered
             ? "w-[1px] h-16 absolute -bottom-16 left-1/2 flex items-center"
             : "hidden"
         }`}

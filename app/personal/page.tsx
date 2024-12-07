@@ -84,11 +84,13 @@ const Personal = () => {
           <PersonalTargetShowcase personal={selectedPersonal} />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {personals.map((personal) => (
+            {personals.map((personal, index) => (
               <SmoothLoadingSection delay={0.2}>
                 <PersonalShowcase
                   key={personal.id}
                   personal={personal}
+                  index={index}
+                  personals={personals}
                   onClick={togglePersonal}
                   isHovered={hoveredPersonalId === personal.id}
                   uniHovered={uniHovered}

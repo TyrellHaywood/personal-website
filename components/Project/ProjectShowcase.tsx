@@ -83,7 +83,7 @@ const ProjectShowcase = ({
           <GridLinesDesktop
             index={index}
             isHovered={isHovered}
-            projects={projects}
+            sharedObjectType={projects}
           />
         </div>
         {/* mobile */}
@@ -91,7 +91,7 @@ const ProjectShowcase = ({
           <GridLinesMobile
             index={index}
             isHovered={isHovered}
-            projects={projects}
+            sharedObjectType={projects}
           />
         </div>
       </div>
