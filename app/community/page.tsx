@@ -53,7 +53,8 @@ const Community = () => {
 
   return (
     <div className="w-full flex flex-col md:flex-row justify-center md:justify-start items-start my-[100px]">
-      <div className="w-[90vw] md:w-2/5">
+      {/* left Column */}
+      <div className="w-[90vw] md:w-2/5 sticky top-6 self-start">
         <SmoothLoadingSection delay={0}>
           <div className="flex flex-row space-x-[15px]">
             <CircleGreen />
@@ -79,6 +80,8 @@ const Community = () => {
           ))}
         </div>
       </div>
+
+      {/* right Column */}
       <div className="w-full md:w-3/5 flex justify-center items-start">
         {selectedCommunity ? (
           <CommunityTargetShowcase community={selectedCommunity} />
