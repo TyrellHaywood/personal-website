@@ -22,65 +22,30 @@ const GridLinesDesktop = ({
 }: GridLinesDesktopProps) => {
   return (
     <>
-      {/* right */}
-      <div
-        className={`${
-          index % 2 == 0 &&
-          index != sharedObjectType.length - 1 &&
-          sharedObjectType.length >= 2 &&
-          isHovered // and index isnt last even element (bottom left of grid)
-            ? "w-[58px] h-[1px] absolute -right-[58px] top-1/2 flex justify-center"
-            : "hidden"
-        } `}
-      >
-        {/* line */}
-        <div className="w-full h-full bg-[--corange]"></div>
-        {/* distance box */}
-        <DistanceBox distance={58} position="top" />
-      </div>
-
       {/* bottom */}
       <div
         className={`${
-          index !== sharedObjectType.length - 2 &&
-          index !== sharedObjectType.length - 1 &&
           isHovered
-            ? "w-[1px] h-16 absolute -bottom-16 left-1/2 flex items-center"
+            ? "w-[1px] h-[18px] absolute -bottom-[18px] left-1/2 flex items-center"
             : "hidden"
         }`}
       >
         {/* line */}
         <div className="w-full h-full bg-[--corange]"></div>
         {/* distance box */}
-        <DistanceBox distance={64} position="" />
+        <DistanceBox distance={18} position="" />
       </div>
 
-      {/* left */}
+      {/* left (dashed)*/}
       <div
         className={`${
-          index % 2 == 1 && sharedObjectType.length >= 2 && isHovered
-            ? "w-[58px] h-[1px] absolute -left-[58px] top-1/2 flex justify-center"
+          isHovered
+            ? "w-1/2 h-[1px] absolute -bottom-[18px] right-1/2 flex justify-center"
             : "hidden"
         } `}
       >
         {/* line */}
         <div className="w-full h-full bg-[--corange]"></div>
-        {/* distance box */}
-        <DistanceBox distance={58} position="top" />
-      </div>
-
-      {/* top */}
-      <div
-        className={`${
-          index != 0 && index != 1 && isHovered
-            ? "w-[1px] h-16 absolute -top-16 left-1/2 flex items-center"
-            : "hidden"
-        }`}
-      >
-        {/* line */}
-        <div className="w-full h-full bg-[--corange]"></div>
-        {/* distance box */}
-        <DistanceBox distance={64} position="" />
       </div>
     </>
   );

@@ -54,7 +54,7 @@ const Community = () => {
   return (
     <div className="w-full flex flex-col md:flex-row justify-center md:justify-start items-start my-[100px]">
       {/* left Column */}
-      <div className="w-[90vw] md:w-2/5 sticky top-6 self-start">
+      <div className="w-[90vw] md:w-2/5 md:sticky top-6 self-start">
         <SmoothLoadingSection delay={0}>
           <div className="flex flex-row space-x-[15px]">
             <CircleGreen />
@@ -86,7 +86,7 @@ const Community = () => {
         {selectedCommunity ? (
           <CommunityTargetShowcase community={selectedCommunity} />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-14 md:ml-12">
             {communities.map((community, index) => (
               <SmoothLoadingSection delay={0.2}>
                 <CommunityShowcase

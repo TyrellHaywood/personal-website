@@ -44,7 +44,7 @@ const PersonalShowcase = ({
 }: PersonalShowcaseProps) => {
   return (
     <motion.button
-      className="h-auto md:ml-[50px] mb-6"
+      className="h-auto"
       onClick={() => onClick(personal.id)}
       transition={transitionConfig()}
       initial={{ opacity: 1 }}
@@ -62,7 +62,7 @@ const PersonalShowcase = ({
     >
       <div
         className={`w-full h-full relative ${
-          isHovered ? "border-[1px] border-[--cblue] opacity-75" : ""
+          isHovered ? "border-[1px] border-[--cblue] opacity-85" : ""
         }`}
       >
         <Image
@@ -79,28 +79,28 @@ const PersonalShowcase = ({
 
         {/* grid lines */}
         {/* desktop */}
-        <div className="hidden md:block">
+        <div className="">
           <GridLinesDesktop
             index={index}
             isHovered={isHovered}
             sharedObjectType={personals}
           />
         </div>
-        {/* mobile */}
-        <div className="block md:hidden">
-          <GridLinesMobile
-            index={index}
-            isHovered={isHovered}
-            sharedObjectType={personals}
-          />
-        </div>
+      </div>
+
+      {/* text */}
+      <div className="text-left">
         <h3
-          className={`p-1 flex-shrink-0 p-font text-xl lg:text-3xl text-left font-light`}
+          className={`mt-4 mb-2 flex-shrink-0 p-font text-xl lg:text-3xl text-left font-light inline-block ${
+            isHovered
+              ? "border-[1px] border-[--corange] underline decoration-[--cblue] decoration-1"
+              : ""
+          }`}
         >
           {personal.title}
         </h3>
         <p
-          className={`p-1 flex-shrink-0 p-font text-sm md:text-base lg:text-xl text-left font-light
+          className={`flex-shrink-0 p-font text-sm md:text-base lg:text-xl text-left font-light
           `}
         >
           {personal.description}

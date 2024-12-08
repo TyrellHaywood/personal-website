@@ -51,7 +51,7 @@ const Projects = () => {
   return (
     <div className="w-full flex flex-col md:flex-row justify-center md:justify-start items-start my-[100px]">
       {/* left Column */}
-      <div className="w-[90vw] md:w-2/5 sticky top-6 self-start">
+      <div className="w-[90vw] md:w-2/5 md:sticky top-6 self-start">
         <SmoothLoadingSection delay={0}>
           <div className="flex flex-row space-x-[15px]">
             <CircleGreen />
@@ -82,7 +82,7 @@ const Projects = () => {
         {selectedProject ? (
           <ProjectTargetShowcase project={selectedProject} />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:ml-12">
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-14 md:ml-12">
             {projects.map((project, index) => (
               <SmoothLoadingSection delay={0.2} key={project.id}>
                 <ProjectShowcase
