@@ -16,6 +16,9 @@ const config: Config = {
         'ibm-plex-serif': ['"IBM Plex Serif"', 'serif'],
         'source-sans': ['"Source Sans 3"', 'sans-serif'],
       },
+      screens: {
+        'xs': '475px',
+      }
     },
   },
   plugins: [],

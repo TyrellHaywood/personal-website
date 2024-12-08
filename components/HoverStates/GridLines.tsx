@@ -9,48 +9,46 @@ interface SharedObject {
   year: number;
 }
 
-interface GridLinesMobileProps {
+interface GridLinesDesktopProps {
   index: number;
   isHovered: boolean;
   sharedObjectType: SharedObject[];
 }
 
-const GridLinesMobile = ({
+const GridLinesDesktop = ({
   isHovered,
   index,
   sharedObjectType,
-}: GridLinesMobileProps) => {
+}: GridLinesDesktopProps) => {
   return (
     <>
       {/* bottom */}
       <div
         className={`${
-          index !== sharedObjectType.length - 1 && isHovered
-            ? "w-[1px] h-16 absolute -bottom-16 left-1/2 flex items-center"
+          isHovered
+            ? "w-[1px] h-[18px] absolute -bottom-[18px] left-1/2 flex items-center"
             : "hidden"
         }`}
       >
         {/* line */}
         <div className="w-full h-full bg-[--corange]"></div>
         {/* distance box */}
-        <DistanceBox distance={64} position="" />
+        <DistanceBox distance={18} position="" />
       </div>
 
-      {/* top */}
+      {/* left (dashed)*/}
       <div
         className={`${
-          index != 0 && isHovered
-            ? "w-[1px] h-16 absolute -top-16 left-1/2 flex items-center"
+          isHovered
+            ? "w-1/2 h-[1px] absolute -bottom-[18px] right-1/2 flex justify-center"
             : "hidden"
-        }`}
+        } `}
       >
         {/* line */}
         <div className="w-full h-full bg-[--corange]"></div>
-        {/* distance box */}
-        <DistanceBox distance={64} position="" />
       </div>
     </>
   );
 };
 
-export default GridLinesMobile;
+export default GridLinesDesktop;

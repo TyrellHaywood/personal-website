@@ -9,11 +9,11 @@ interface DistanceBoxProps {
 const DistanceBox = ({ distance, position }: DistanceBoxProps) => {
   return (
     <div
-      className={`absolute w-[20px] h-[20px] rounded-[2px] bg-[--corange] flex justify-center items-center ${
+      className={`absolute w-4 h-3 rounded-[2px] bg-[--corange] flex justify-center items-center ${
         position == "top" ? "mt-1" : "ml-1"
       }`}
     >
-      <p className="p-font text-white text-xs">{distance}</p>
+      <p className="p-font text-white font-light text-[10px]">{distance}</p>
     </div>
   );
 };
