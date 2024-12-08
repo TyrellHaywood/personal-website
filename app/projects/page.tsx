@@ -39,7 +39,6 @@ const Projects = () => {
         const response = await fetch("/api/projects");
         const data = await response.json();
         setProjects(data);
-        console.log("Projects fetched:", data);
       } catch (error) {
         console.error("Failed to fetch projects:", error);
       }
