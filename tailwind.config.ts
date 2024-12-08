@@ -17,7 +17,7 @@ const config: Config = {
         'source-sans': ['"Source Sans 3"', 'sans-serif'],
       },
       screens: {
-        'xs': '475px',
+        'xs': '375px',
       }
     },
   },
