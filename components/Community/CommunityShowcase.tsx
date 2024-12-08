@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 
 // components
 import TileCorners from "../HoverStates/TileCorners";
-import GridLinesDesktop from "../HoverStates/GridLinesDesktop";
-import GridLinesMobile from "../HoverStates/GridLinesMobile";
+import GridLinesDesktop from "../HoverStates/GridLines";
 
 const transitionConfig = (delay = 0) => ({
   type: "spring",
