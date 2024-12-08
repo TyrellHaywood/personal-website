@@ -1,11 +1,16 @@
 "use client";
 
+// dependencies
 import { useEffect, useState } from "react";
+
+/// components
 import ProjectTab from "@/components/Project/ProjectTab";
 import ProjectShowcase from "@/components/Project/ProjectShowcase";
 import ProjectTargetShowcase from "@/components/Project/ProjectTarget";
-import CircleGreen from "@/components/CircleGreen";
+import CircleGreen from "@/components/Shared/CircleGreen";
+import SectionDescription from "@/components/Shared/SectionDescription";
 
+// smooth loading element
 import SmoothLoadingSection from "@/components/SmoothLoadingElement";
 
 interface Project {
@@ -62,6 +67,9 @@ const Projects = () => {
           <h2 className="h-font my-[25px] text-2xl lg:text-4x">Software</h2>
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.4}>
+          <SectionDescription description="something about why this section is meaningful or important... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eros ligula, condimentum sit amet orci ut, egestas efficitur magna. " />
+        </SmoothLoadingSection>
+        <SmoothLoadingSection delay={0.6}>
           <div className="w-full mb-[25px] md:mb-0">
             {projects.map((project) => (
               <ProjectTab

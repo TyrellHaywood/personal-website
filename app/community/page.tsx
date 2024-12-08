@@ -1,13 +1,17 @@
 "use client";
 
+// dependencies
 import { useEffect, useState } from "react";
 
+// components
 import CommunityTab from "@/components/Community/CommunityTab";
 import CommunityShowcase from "@/components/Community/CommunityShowcase";
 import CommunityTargetShowcase from "@/components/Community/CommunityTarget";
-import CircleGreen from "@/components/CircleGreen";
-import CircleRed from "@/components/CircleRed";
+import CircleGreen from "@/components/Shared/CircleGreen";
+import CircleRed from "@/components/Shared/CircleRed";
+import SectionDescription from "@/components/Shared/SectionDescription";
 
+// smooth loading element
 import SmoothLoadingSection from "@/components/SmoothLoadingElement";
 
 interface Community {
@@ -64,10 +68,12 @@ const Community = () => {
         <SmoothLoadingSection delay={0.2}>
           <h2 className="h-font my-[25px] text-2xl lg:text-4x">Community</h2>
         </SmoothLoadingSection>
-
-        <div className="w-full mb-[25px] md:mb-0">
-          {communities.map((community) => (
-            <SmoothLoadingSection delay={0.4}>
+        <SmoothLoadingSection delay={0.4}>
+          <SectionDescription description="something about why this section is meaningful or important... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eros ligula, condimentum sit amet orci ut, egestas efficitur magna. " />
+        </SmoothLoadingSection>
+        <SmoothLoadingSection delay={0.6}>
+          <div className="w-full mb-[25px] md:mb-0">
+            {communities.map((community) => (
               <CommunityTab
                 key={community.id}
                 community={community}
@@ -76,9 +82,9 @@ const Community = () => {
                 isHovered={hoveredCommunityId === community.id}
                 setHoveredCommunityId={setHoveredCommunityId}
               />
-            </SmoothLoadingSection>
-          ))}
-        </div>
+            ))}
+          </div>
+        </SmoothLoadingSection>
       </div>
 
       {/* right Column */}

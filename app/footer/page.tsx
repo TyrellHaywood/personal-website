@@ -1,5 +1,5 @@
-import TypeWriter from "@/components/Typewriter";
-import Socials from "@/components/Socials";
+import TypeWriter from "@/components/Footer/Typewriter";
+import Socials from "@/components/Footer/Socials";
 
 const Footer = () => {
   return (
