@@ -33,7 +33,7 @@ const Socials = () => {
     },
     {
       id: "instagram",
-      href: "https://www.instagram.com/tyrellhaywood",
+      href: "https://www.instagram.com/tyrell.haywood/",
       icon: InstagramLogo,
     },
   ];
