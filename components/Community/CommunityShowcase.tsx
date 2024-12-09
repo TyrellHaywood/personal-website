@@ -79,11 +79,7 @@ const CommunityShowcase = ({
         {/* grid lines */}
         {/* desktop */}
         <div className="">
-          <GridLinesDesktop
-            index={index}
-            isHovered={isHovered}
-            sharedObjectType={communities}
-          />
+          <GridLinesDesktop isHovered={isHovered} />
         </div>
       </div>
 

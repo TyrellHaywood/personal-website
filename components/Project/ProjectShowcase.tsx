@@ -79,11 +79,7 @@ const ProjectShowcase = ({
         {/* grid lines */}
         {/* desktop */}
         <div className="">
-          <GridLinesDesktop
-            index={index}
-            isHovered={isHovered}
-            sharedObjectType={projects}
-          />
+          <GridLinesDesktop isHovered={isHovered} />
         </div>
       </div>
 
