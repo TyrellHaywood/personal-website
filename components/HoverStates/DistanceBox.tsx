@@ -13,7 +13,9 @@ const DistanceBox = ({ distance, position }: DistanceBoxProps) => {
         position == "top" ? "mt-1" : "ml-1"
       }`}
     >
-      <p className="p-font text-white font-light text-[10px]">{distance}</p>
+      <p className="p-font text-white font-light text-[10px] m-auto">
+        {distance}
+      </p>
     </div>
   );
 };
