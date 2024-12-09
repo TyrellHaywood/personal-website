@@ -11,8 +11,10 @@ interface CommunityTarget {
   id: number;
   title: string;
   image: string;
-  description: string;
+  textArea: string;
   year: number;
+  description: string;
+  link: string;
 }
 
 interface CommunityTargetShowcaseProps {
@@ -65,7 +67,7 @@ const ProjectTargetShowcase = ({ community }: CommunityTargetShowcaseProps) => {
           {community.title}
         </motion.h1>
         <p className="p-font text-sm md:text-base lg:text-xl">
-          {community.description}
+          {community.textArea}
         </p>
       </div>
     </a>
