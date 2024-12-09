@@ -32,7 +32,12 @@ const transitionConfig = (delay = 0) => ({
 const ProjectTargetShowcase = ({ community }: CommunityTargetShowcaseProps) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <a href="" className="w-full md:ml-[50px]">
+    <a
+      href={community.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full md:ml-[50px]"
+    >
       <motion.div
         className="w-full border-[1px] border-[--cblue] relative"
         initial={{ borderColor: "var(--cblue)" }}
@@ -49,7 +54,7 @@ const ProjectTargetShowcase = ({ community }: CommunityTargetShowcaseProps) => {
           alt={community.title}
           layout="responsive"
           objectFit="contain"
-          className="w-full"
+          className={`w-full ${isHovered ? "shadow-lg" : ""}`}
         />
         {/* corners */}
         <TileCorners isHovered={true} />
@@ -66,7 +71,7 @@ const ProjectTargetShowcase = ({ community }: CommunityTargetShowcaseProps) => {
         >
           {community.title}
         </motion.h1>
-        <p className="p-font text-sm md:text-base lg:text-xl">
+        <p className="p-font text-sm md:text-base lg:text-xl font-light">
           {community.textArea}
         </p>
       </div>

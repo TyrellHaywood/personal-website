@@ -11,8 +11,10 @@ interface ProjectTarget {
   id: number;
   title: string;
   image: string;
-  description: string;
+  textArea: string;
   year: number;
+  description: string;
+  link: string;
 }
 
 interface ProjectTargetShowcaseProps {
@@ -30,7 +32,12 @@ const transitionConfig = (delay = 0) => ({
 const ProjectTargetShowcase = ({ project }: ProjectTargetShowcaseProps) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <a href="" className="w-full md:ml-[50px]">
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full md:ml-[50px]"
+    >
       <motion.div
         className="w-full border-[1px] border-[--cblue] relative"
         initial={{ borderColor: "var(--cblue)" }}
@@ -47,7 +54,7 @@ const ProjectTargetShowcase = ({ project }: ProjectTargetShowcaseProps) => {
           alt={project.title}
           layout="responsive"
           objectFit="contain"
-          className="w-full"
+          className={`w-full ${isHovered ? "shadow-lg" : ""}`}
         />
         {/* corners */}
         <TileCorners isHovered={true} />
@@ -64,8 +71,8 @@ const ProjectTargetShowcase = ({ project }: ProjectTargetShowcaseProps) => {
         >
           {project.title}
         </motion.h1>
-        <p className="p-font text-sm md:text-base lg:text-xl">
-          {project.description}
+        <p className="p-font text-sm md:text-base lg:text-xl font-light">
+          {project.textArea}
         </p>
       </div>
     </a>

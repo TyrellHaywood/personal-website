@@ -18,8 +18,10 @@ interface Personal {
   id: number;
   title: string;
   image: string;
-  description: string;
+  textArea: string;
   year: number;
+  description: string;
+  link: string;
 }
 
 const Personal = () => {
