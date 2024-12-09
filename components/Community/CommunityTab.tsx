@@ -61,7 +61,7 @@ const CommunityTab = ({
     >
       <h3
         className={`flex-shrink-0 p-font text-xl lg:text-3xl ${
-          isSelected ? "font-normal" : "font-light"
+          isSelected ? "font-[350]" : "font-light"
         }`}
       >
         {community.title}
@@ -76,7 +76,7 @@ const CommunityTab = ({
       ></motion.div>
       <h3
         className={`flex-shrink-0 p-font text-xl lg:text-3xl ${
-          isSelected ? "font-normal" : "font-light"
+          isSelected ? "font-[350]" : "font-light"
         }`}
       >
         {community.year}

@@ -15,6 +15,8 @@ model SoftwarePost {
   year  Int
   image String
   description String @db.Text
+  textArea    String @db.Text
+  link        String
 }
 
 model HardwarePost {
@@ -23,6 +25,8 @@ model HardwarePost {
   year  Int
   image String
   description String @db.Text
+  textArea    String @db.Text
+  link        String
 }
 
 model CommunityPost {
@@ -31,6 +35,8 @@ model CommunityPost {
   year  Int
   image String
   description String @db.Text
+  textArea    String @db.Text
+  link        String
 }
 
 model PersonalPost {
@@ -39,4 +45,6 @@ model PersonalPost {
   year  Int
   image String
   description String @db.Text
+  textArea    String @db.Text
+  link        String
 }

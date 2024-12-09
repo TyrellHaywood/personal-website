@@ -18,8 +18,10 @@ interface Personal {
   id: number;
   title: string;
   image: string;
-  description: string;
+  textArea: string;
   year: number;
+  description: string;
+  link: string;
 }
 
 const Personal = () => {
@@ -91,7 +93,10 @@ const Personal = () => {
       {/* right Column */}
       <div className="w-full md:w-3/5 flex justify-center items-start">
         {selectedPersonal ? (
-          <PersonalTargetShowcase personal={selectedPersonal} />
+          <PersonalTargetShowcase
+            personal={selectedPersonal}
+            isHovered={hoveredPersonalId === selectedPersonal.id}
+          />
         ) : (
           <div className="grid grid-cols-1 xs:grid-cols-2 gap-14 md:ml-12">
             {personals.map((personal, index) => (

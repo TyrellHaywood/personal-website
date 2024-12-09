@@ -17,8 +17,10 @@ interface Project {
   id: number;
   title: string;
   image: string;
-  description: string;
+  textArea: string;
   year: number;
+  description: string;
+  link: string;
 }
 
 const Projects = () => {
@@ -87,7 +89,10 @@ const Projects = () => {
       {/* right Column */}
       <div className="w-full md:w-3/5 flex justify-center items-start">
         {selectedProject ? (
-          <ProjectTargetShowcase project={selectedProject} />
+          <ProjectTargetShowcase
+            project={selectedProject}
+            isHovered={hoveredProjectId === selectedProject.id}
+          />
         ) : (
           <div className="grid grid-cols-1 xs:grid-cols-2 gap-14 md:ml-12">
             {projects.map((project, index) => (

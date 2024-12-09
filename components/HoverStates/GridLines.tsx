@@ -9,17 +9,11 @@ interface SharedObject {
   year: number;
 }
 
-interface GridLinesDesktopProps {
-  index: number;
+interface GridLinesProps {
   isHovered: boolean;
-  sharedObjectType: SharedObject[];
 }
 
-const GridLinesDesktop = ({
-  isHovered,
-  index,
-  sharedObjectType,
-}: GridLinesDesktopProps) => {
+const GridLines = ({ isHovered }: GridLinesProps) => {
   return (
     <>
       {/* bottom */}
@@ -51,4 +45,4 @@ const GridLinesDesktop = ({
   );
 };
 
-export default GridLinesDesktop;
+export default GridLines;

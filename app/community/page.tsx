@@ -18,8 +18,10 @@ interface Community {
   id: number;
   title: string;
   image: string;
-  description: string;
+  textArea: string;
   year: number;
+  description: string;
+  link: string;
 }
 
 const Community = () => {
@@ -90,7 +92,10 @@ const Community = () => {
       {/* right Column */}
       <div className="w-full md:w-3/5 flex justify-center items-start">
         {selectedCommunity ? (
-          <CommunityTargetShowcase community={selectedCommunity} />
+          <CommunityTargetShowcase
+            community={selectedCommunity}
+            isHovered={hoveredCommunityId === selectedCommunity.id}
+          />
         ) : (
           <div className="grid grid-cols-1 xs:grid-cols-2 gap-14 md:ml-12">
             {communities.map((community, index) => (
