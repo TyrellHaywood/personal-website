@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --bg-color: #F6F1EC;
-  --cpurple: #7568DE;
-  --cred: #FE6845;
-  --cblue: #468AFB;
-  --corange: #FFA046;
-  --cgreen: #9ECB45;
+  --bg-color: #f6f1ec;
+  --cpurple: #7568de;
+  --cred: #fe6845;
+  --cblue: #468afb;
+  --corange: #ffa046;
+  --cgreen: #9ecb45;
 }
 
-* {
-  cursor: url('/images/cursor.svg'), auto;
+*:not(.clickable) {
+  cursor: url("/images/cursor.svg"), auto;
 }
 
 .background {
