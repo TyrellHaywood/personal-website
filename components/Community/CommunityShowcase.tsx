@@ -61,7 +61,7 @@ const CommunityShowcase = ({
     >
       <div
         className={`w-full h-full relative ${
-          isHovered ? "border-[1px] border-[--cblue] opacity-85" : ""
+          isHovered ? "border-[1px] border-[--cblue] opacity-85 shadow-lg" : ""
         }`}
       >
         <Image
