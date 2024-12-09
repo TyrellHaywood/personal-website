@@ -67,13 +67,13 @@ const Community = () => {
             <CircleRed />
           </div>
         </SmoothLoadingSection>
-        <SmoothLoadingSection delay={0.2}>
+        <SmoothLoadingSection delay={0.1}>
           <h2 className="h-font my-[25px] text-2xl lg:text-4x">Community</h2>
         </SmoothLoadingSection>
-        <SmoothLoadingSection delay={0.4}>
+        <SmoothLoadingSection delay={0.2}>
           <SectionDescription description="something about why this section is meaningful or important... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eros ligula, condimentum sit amet orci ut, egestas efficitur magna. " />
         </SmoothLoadingSection>
-        <SmoothLoadingSection delay={0.6}>
+        <SmoothLoadingSection delay={0.3}>
           <div className="w-full mb-[25px] md:mb-0">
             {communities.map((community) => (
               <CommunityTab
@@ -99,7 +99,7 @@ const Community = () => {
         ) : (
           <div className="grid grid-cols-1 xs:grid-cols-2 gap-14 md:ml-12">
             {communities.map((community, index) => (
-              <SmoothLoadingSection delay={0.2}>
+              <SmoothLoadingSection delay={0.4}>
                 <CommunityShowcase
                   key={community.id}
                   community={community}
