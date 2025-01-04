@@ -15,19 +15,19 @@ export default function Home() {
         <Homepage />
       </SmoothLoadingSection>
 
-      <SmoothLoadingSection delay={0.2}>
+      <SmoothLoadingSection delay={0}>
         <Projects />
       </SmoothLoadingSection>
 
-      <SmoothLoadingSection delay={0.4}>
+      <SmoothLoadingSection delay={0}>
         <Community />
       </SmoothLoadingSection>
 
-      <SmoothLoadingSection delay={0.4}>
+      <SmoothLoadingSection delay={0}>
         <Personal />
       </SmoothLoadingSection>
 
-      <SmoothLoadingSection delay={0.6}>
+      <SmoothLoadingSection delay={0}>
         <Footer />
       </SmoothLoadingSection>
     </div>
