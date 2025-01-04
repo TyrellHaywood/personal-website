@@ -71,7 +71,7 @@ const Community = () => {
           <h2 className="h-font my-[25px] text-2xl lg:text-4x">Community</h2>
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.2}>
-          <SectionDescription description="something about why this section is meaningful or important... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eros ligula, condimentum sit amet orci ut, egestas efficitur magna. " />
+          <SectionDescription description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eros ligula, condimentum sit amet orci ut, egestas efficitur magna. " />
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.3}>
           <div className="w-full mb-[25px] md:mb-0">
