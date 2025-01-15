@@ -11,7 +11,7 @@ interface ProjectTarget {
   id: number;
   title: string;
   image: string;
-  textArea: string;
+  textArea: string | JSX.Element;
   year: number;
   description: string;
   link: string;
@@ -48,7 +48,7 @@ const ProjectTargetShowcase = ({ project }: ProjectTargetShowcaseProps) => {
         transition={transitionConfig()}
       >
         <Image
-          src="/images/placeholder.svg"
+          src={project.image}
           width={600}
           height={400}
           alt={project.title}
