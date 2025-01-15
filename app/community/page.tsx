@@ -2,6 +2,7 @@
 
 // dependencies
 import { useEffect, useState } from "react";
+import communities from "@/components/Community/CommunityData";
 
 // components
 import CommunityTab from "@/components/Community/CommunityTab";
@@ -25,7 +26,6 @@ interface Community {
 }
 
 const Community = () => {
-  const [communities, setCommunities] = useState<Community[]>([]);
   const [selectedCommunityId, setSelectedCommunityId] = useState<number | null>(
     null
   );
@@ -37,20 +37,6 @@ const Community = () => {
   const toggleCommunity = (id: number) => {
     setSelectedCommunityId((currentId) => (currentId === id ? null : id));
   };
-
-  useEffect(() => {
-    const fetchCommunties = async () => {
-      try {
-        const response = await fetch("/api/community");
-        const data = await response.json();
-        setCommunities(data);
-      } catch (error) {
-        console.error("Failed to fetch communities:", error);
-      }
-    };
-
-    fetchCommunties();
-  }, []);
 
   // find the currently selected community
   const selectedCommunity = communities.find(
