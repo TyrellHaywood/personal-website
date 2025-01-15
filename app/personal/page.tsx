@@ -2,6 +2,7 @@
 
 //dependencies
 import { useEffect, useState } from "react";
+import personals from "@/components/Personal/PersonalData";
 
 //components
 import PersonalTab from "@/components/Personal/PersonalTab";
@@ -25,7 +26,6 @@ interface Personal {
 }
 
 const Personal = () => {
-  const [personals, setPersonals] = useState<Personal[]>([]);
   const [selectedPersonalId, setSelectedPersonalId] = useState<number | null>(
     null
   );
@@ -38,20 +38,6 @@ const Personal = () => {
   const togglePersonal = (id: number) => {
     setSelectedPersonalId((currentId) => (currentId === id ? null : id));
   };
-
-  useEffect(() => {
-    const fetchPersonals = async () => {
-      try {
-        const response = await fetch("/api/personal");
-        const data = await response.json();
-        setPersonals(data);
-      } catch (error) {
-        console.error("Failed to fetch communities:", error);
-      }
-    };
-
-    fetchPersonals();
-  }, []);
 
   // find the currently selected personal
   const selectedPersonal = personals.find(

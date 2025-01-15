@@ -2,6 +2,7 @@
 
 // dependencies
 import { useEffect, useState } from "react";
+import projects from "@/components/Project/ProjectData";
 
 /// components
 import ProjectTab from "@/components/Project/ProjectTab";
@@ -15,6 +16,7 @@ import SmoothLoadingSection from "@/components/SmoothLoadingElement";
 
 interface Project {
   id: number;
+  type: string;
   title: string;
   image: string;
   textArea: string;
@@ -24,7 +26,6 @@ interface Project {
 }
 
 const Projects = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(
     null
   );
@@ -34,20 +35,6 @@ const Projects = () => {
   const toggleProject = (id: number) => {
     setSelectedProjectId((currentId) => (currentId === id ? null : id));
   };
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await fetch("/api/projects");
-        const data = await response.json();
-        setProjects(data);
-      } catch (error) {
-        console.error("Failed to fetch projects:", error);
-      }
-    };
-
-    fetchProjects();
-  }, []);
 
   // find the currently selected project
   const selectedProject = projects.find(
