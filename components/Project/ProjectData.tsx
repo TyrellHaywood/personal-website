@@ -72,7 +72,7 @@ const projects: ProjectItem[] = [
     id: 4,
     type: "",
     title: "Perlin Noise AV",
-    image: "/images/projects/PerlinNoiseAV.png",
+    image: "/images/projects/PerlinNoiseAVPrototypeG.gif",
     logo: "",
     textArea: (
       <>

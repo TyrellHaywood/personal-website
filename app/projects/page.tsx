@@ -48,16 +48,19 @@ const Projects = () => {
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.3}>
           <div className="w-full mb-[25px] md:mb-0">
-            {projects.map((project) => (
-              <ProjectTab
-                key={project.id}
-                project={project}
-                isSelected={project.id === selectedProjectId}
-                onClick={toggleProject}
-                isHovered={hoveredProjectId === project.id}
-                setHoveredProjectId={setHoveredProjectId}
-              />
-            ))}
+            {projects
+              .slice()
+              .reverse()
+              .map((project) => (
+                <ProjectTab
+                  key={project.id}
+                  project={project}
+                  isSelected={project.id === selectedProjectId}
+                  onClick={toggleProject}
+                  isHovered={hoveredProjectId === project.id}
+                  setHoveredProjectId={setHoveredProjectId}
+                />
+              ))}
           </div>
         </SmoothLoadingSection>
       </div>
@@ -71,20 +74,23 @@ const Projects = () => {
           />
         ) : (
           <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-14 md:ml-12">
-            {projects.map((project, index) => (
-              <SmoothLoadingSection delay={0.4} key={project.id}>
-                <ProjectShowcase
-                  project={project}
-                  index={index}
-                  projects={projects}
-                  onClick={toggleProject}
-                  isHovered={hoveredProjectId === project.id}
-                  uniHovered={uniHovered}
-                  setUniHovered={setUniHovered}
-                  setHoveredProjectId={setHoveredProjectId}
-                />
-              </SmoothLoadingSection>
-            ))}
+            {projects
+              .slice()
+              .reverse()
+              .map((project, index) => (
+                <SmoothLoadingSection delay={0.4} key={project.id}>
+                  <ProjectShowcase
+                    project={project}
+                    index={index}
+                    projects={projects}
+                    onClick={toggleProject}
+                    isHovered={hoveredProjectId === project.id}
+                    uniHovered={uniHovered}
+                    setUniHovered={setUniHovered}
+                    setHoveredProjectId={setHoveredProjectId}
+                  />
+                </SmoothLoadingSection>
+              ))}
           </div>
         )}
       </div>
