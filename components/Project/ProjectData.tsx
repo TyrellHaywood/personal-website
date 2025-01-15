@@ -79,7 +79,7 @@ const projects: ProjectItem[] = [
         A web-based audio visualizer using p5.js. This is a learning log for
         working with the{" "}
         <a
-          href="https://developers.meethue.com/develop/get-started-2/"
+          href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"
           className="text-[--cblue] underline hover:text-[--corange] transition-all duration-300 ease-in-out"
         >
           Web Audio API
@@ -89,7 +89,7 @@ const projects: ProjectItem[] = [
         <br />
         <br />
         <a
-          href="https://developers.meethue.com/develop/get-started-2/"
+          href="https://en.wikipedia.org/wiki/Perlin_noise#:~:text=Perlin%20noise%20is%20a%20type,the%20creation%20of%20image%20textures."
           className="text-[--cblue] underline hover:text-[--corange] transition-all duration-300 ease-in-out"
         >
           Perlin Noise
