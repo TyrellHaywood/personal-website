@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const transitionConfig = (delay = 0) => ({
   type: "spring",
@@ -12,10 +13,14 @@ const transitionConfig = (delay = 0) => ({
 
 interface Project {
   id: number;
+  type: string;
   title: string;
   image: string;
-  description: string;
+  logo: string;
+  textArea: string | JSX.Element;
   year: number;
+  description: string;
+  link: string;
 }
 
 interface ProjectTabProps {
@@ -74,6 +79,16 @@ const ProjectTab = ({
           borderColor: isHovered || isSelected ? "var(--corange)" : "black",
         }}
       ></motion.div>
+      {project.logo ? (
+        <div className="flex justify-center items-center w-[20px] h-[20px] lg:w-[30px] lg:h-[30px] pr-1">
+          <Image
+            src={project.logo}
+            width={40}
+            height={40}
+            alt={project.title}
+          />
+        </div>
+      ) : null}
       <h3
         className={`flex-shrink-0 p-font text-xl lg:text-3xl ${
           isSelected ? "font-[350]" : "font-light"
