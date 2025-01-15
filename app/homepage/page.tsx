@@ -92,9 +92,9 @@ const Homepage = () => {
                 className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
               />
             </motion.span>{" "}
-            for our 2025 conference. Lately, I’m excited about creating
-            interactive digital experiences that incorporate live audio inputs,
-            large datasets, and user interactions.
+            for our 2025 conference. Lately, I’m excited about creating digital
+            experiences that incorporate audio visuals, GIS, and user
+            interactions.
           </motion.p>
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.4}>
