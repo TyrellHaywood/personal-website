@@ -60,7 +60,7 @@ const ProjectShowcase = ({
       }}
     >
       <div
-        className={`w-full h-full relative ${
+        className={`w-full max-w-[300px] h-full relative ${
           isHovered ? "border-[1px] border-[--cblue] opacity-85 shadow-lg" : ""
         }`}
       >

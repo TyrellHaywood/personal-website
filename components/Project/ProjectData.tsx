@@ -3,6 +3,7 @@ export interface ProjectItem {
   type: string;
   title: string;
   image: string;
+  logo: string;
   textArea: string;
   year: number;
   description: string;
@@ -15,6 +16,7 @@ const projects: ProjectItem[] = [
     type: "",
     title: "",
     image: "",
+    logo: "",
     textArea: "",
     year: 0,
     description: "",
