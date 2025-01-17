@@ -11,7 +11,7 @@ interface PersonalTarget {
   id: number;
   title: string;
   image: string;
-  textArea: string;
+  textArea: string | JSX.Element;
   year: number;
   description: string;
   link: string;

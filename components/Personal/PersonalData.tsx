@@ -3,7 +3,7 @@ export interface PersonalItem {
   title: string;
   image: string;
   logo: string;
-  textArea: string;
+  textArea: string | JSX.Element;
   year: number;
   description: string;
   link: string;
@@ -12,14 +12,35 @@ export interface PersonalItem {
 const personals: PersonalItem[] = [
   {
     id: 0,
-    title: "",
+    title: "Bass Guitar",
     image: "",
     logo: "",
-    textArea: "",
+    textArea: (
+      <>
+        I play bass! I mostly post on my{" "}
+        <a
+          href="https://www.instagram.com/stories/highlights/17851867422044298/"
+          className="underline"
+        >
+          instagram
+        </a>{" "}
+        for now
+      </>
+    ),
     year: 0,
-    description: "",
+    description: "I play bass!",
     link: "",
   },
+  // {
+  //   id: 0,
+  //   title: "",
+  //   image: "",
+  //   logo: "",
+  //   textArea: "",
+  //   year: 0,
+  //   description: "",
+  //   link: "",
+  // },
 ];
 
 export default personals;

@@ -1,7 +1,9 @@
 "use client";
 
+// dependencies
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const transitionConfig = (delay = 0) => ({
   type: "spring",
@@ -14,8 +16,11 @@ interface Personal {
   id: number;
   title: string;
   image: string;
-  description: string;
+  logo: string;
+  textArea: string | JSX.Element;
   year: number;
+  description: string;
+  link: string;
 }
 
 interface PersonalTabProps {
@@ -35,7 +40,7 @@ const PersonalTab = ({
 }: PersonalTabProps) => {
   return (
     <motion.button
-      className={`w-full h-[25px] lg:h-[45px] flex items-center py-4 ${
+      className={`w-full h-[25px] lg:h-[45px] flex items-center py-0.5 text-left ${
         isHovered || isSelected ? "shadow-lg" : ""
       }`}
       onClick={() => onClick(personal.id)}
@@ -60,7 +65,7 @@ const PersonalTab = ({
       }}
     >
       <h3
-        className={`flex-shrink-0 p-font text-xl lg:text-3xl ${
+        className={`p-font text-xl lg:text-3xl ${
           isSelected ? "font-[350]" : "font-light"
         }`}
       >
@@ -74,6 +79,16 @@ const PersonalTab = ({
           borderColor: isHovered || isSelected ? "var(--corange)" : "black",
         }}
       ></motion.div>
+      {personal.logo ? (
+        <div className="flex justify-center items-center w-[20px] h-[20px] lg:w-[30px] lg:h-[30px] pr-1 flex-shrink-0">
+          <Image
+            src={personal.logo}
+            width={40}
+            height={40}
+            alt={personal.title}
+          />
+        </div>
+      ) : null}
       <h3
         className={`flex-shrink-0 p-font text-xl lg:text-3xl ${
           isSelected ? "font-[350]" : "font-light"
