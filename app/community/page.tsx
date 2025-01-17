@@ -51,16 +51,19 @@ const Community = () => {
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.3}>
           <div className="w-full mb-[25px] md:mb-0">
-            {communities.map((community) => (
-              <CommunityTab
-                key={community.id}
-                community={community}
-                isSelected={community.id === selectedCommunityId}
-                onClick={toggleCommunity}
-                isHovered={hoveredCommunityId === community.id}
-                setHoveredCommunityId={setHoveredCommunityId}
-              />
-            ))}
+            {communities
+              .slice()
+              .reverse()
+              .map((community) => (
+                <CommunityTab
+                  key={community.id}
+                  community={community}
+                  isSelected={community.id === selectedCommunityId}
+                  onClick={toggleCommunity}
+                  isHovered={hoveredCommunityId === community.id}
+                  setHoveredCommunityId={setHoveredCommunityId}
+                />
+              ))}
           </div>
         </SmoothLoadingSection>
       </div>
@@ -74,21 +77,24 @@ const Community = () => {
           />
         ) : (
           <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-14 md:ml-12">
-            {communities.map((community, index) => (
-              <SmoothLoadingSection delay={0.4}>
-                <CommunityShowcase
-                  key={community.id}
-                  community={community}
-                  index={index}
-                  communities={communities}
-                  onClick={toggleCommunity}
-                  isHovered={hoveredCommunityId === community.id}
-                  uniHovered={uniHovered}
-                  setUniHovered={setUniHovered}
-                  setHoveredCommunityId={setHoveredCommunityId}
-                />
-              </SmoothLoadingSection>
-            ))}
+            {communities
+              .slice()
+              .reverse()
+              .map((community, index) => (
+                <SmoothLoadingSection delay={0.4}>
+                  <CommunityShowcase
+                    key={community.id}
+                    community={community}
+                    index={index}
+                    communities={communities}
+                    onClick={toggleCommunity}
+                    isHovered={hoveredCommunityId === community.id}
+                    uniHovered={uniHovered}
+                    setUniHovered={setUniHovered}
+                    setHoveredCommunityId={setHoveredCommunityId}
+                  />
+                </SmoothLoadingSection>
+              ))}
           </div>
         )}
       </div>

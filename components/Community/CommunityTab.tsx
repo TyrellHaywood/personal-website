@@ -1,7 +1,9 @@
 "use client";
 
+// dependencies
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const transitionConfig = (delay = 0) => ({
   type: "spring",
@@ -14,8 +16,11 @@ interface Community {
   id: number;
   title: string;
   image: string;
-  description: string;
+  logo: string;
+  textArea: string | JSX.Element;
   year: number;
+  description: string;
+  link: string;
 }
 
 interface CommunityTabProps {
@@ -74,6 +79,16 @@ const CommunityTab = ({
           borderColor: isHovered || isSelected ? "var(--corange)" : "black",
         }}
       ></motion.div>
+      {community.logo ? (
+        <div className="flex justify-center items-center w-[20px] h-[20px] lg:w-[30px] lg:h-[30px] pr-1">
+          <Image
+            src={community.logo}
+            width={40}
+            height={40}
+            alt={community.title}
+          />
+        </div>
+      ) : null}
       <h3
         className={`flex-shrink-0 p-font text-xl lg:text-3xl ${
           isSelected ? "font-[350]" : "font-light"

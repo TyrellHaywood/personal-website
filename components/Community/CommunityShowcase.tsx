@@ -65,7 +65,7 @@ const CommunityShowcase = ({
         }`}
       >
         <Image
-          src="/images/placeholder.svg"
+          src={community.image}
           width={600}
           height={400}
           alt="Project Showcase"

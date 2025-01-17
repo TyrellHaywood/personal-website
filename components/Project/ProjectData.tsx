@@ -36,14 +36,14 @@ const projects: ProjectItem[] = [
         real-time fetching and updating of lights, using the{" "}
         <a
           href="https://developers.meethue.com/develop/get-started-2/"
-          className="text-[--cblue] underline hover:text-[--corange] transition-all duration-300 ease-in-out"
+          className="underline"
         >
           hue dev docs
         </a>{" "}
         and{" "}
         <a
           href="https://github.com/benknight/hue-python-rgb-converter"
-          className="text-[--cblue] underline hover:text-[--corange] transition-all duration-300 ease-in-out"
+          className="underline"
         >
           this
         </a>{" "}
@@ -59,7 +59,7 @@ const projects: ProjectItem[] = [
     id: 3,
     type: "",
     title: "CUSEC 2025",
-    image: "/images/projects/cusec2025.png",
+    image: "/images/projects/cusec2025.gif",
     logo: "/images/logos/cusec2025.svg",
     textArea:
       "The official website for the 2025 edition of the Canadian University Software Engineering Conference (CUSEC)",
@@ -80,7 +80,7 @@ const projects: ProjectItem[] = [
         working with the{" "}
         <a
           href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"
-          className="text-[--cblue] underline hover:text-[--corange] transition-all duration-300 ease-in-out"
+          className="underline"
         >
           Web Audio API
         </a>{" "}
@@ -90,7 +90,7 @@ const projects: ProjectItem[] = [
         <br />
         <a
           href="https://en.wikipedia.org/wiki/Perlin_noise#:~:text=Perlin%20noise%20is%20a%20type,the%20creation%20of%20image%20textures."
-          className="text-[--cblue] underline hover:text-[--corange] transition-all duration-300 ease-in-out"
+          className="underline"
         >
           Perlin Noise
         </a>{" "}
