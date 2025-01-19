@@ -1,7 +1,7 @@
 
 # My [personal website](https://www.tyrellhaywood.me/)!
 
-![tyrellhaywood.me](/public/images/website.png)
+![tyrellhaywood.me](/public/images/website.gif)
 
 ### About:
 
