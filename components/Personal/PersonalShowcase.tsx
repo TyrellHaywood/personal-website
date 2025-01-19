@@ -65,7 +65,7 @@ const PersonalShowcase = ({
         }`}
       >
         <Image
-          src="/images/placeholder.svg"
+          src={personal.image}
           width={600}
           height={400}
           alt="Project Showcase"

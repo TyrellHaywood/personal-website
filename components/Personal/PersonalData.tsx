@@ -13,7 +13,7 @@ const personals: PersonalItem[] = [
   {
     id: 0,
     title: "Bass Guitar",
-    image: "",
+    image: "/images/personal/bass.gif",
     logo: "",
     textArea: (
       <>
@@ -27,8 +27,18 @@ const personals: PersonalItem[] = [
         for now
       </>
     ),
-    year: 0,
+    year: 2022,
     description: "I play bass!",
+    link: "",
+  },
+  {
+    id: 1,
+    title: "Cooking",
+    image: "/images/personal/bagels.png",
+    logo: "",
+    textArea: "I like to make foods, especially breads :D",
+    year: 2023,
+    description: "I like to make foods, especially breads :D",
     link: "",
   },
   // {

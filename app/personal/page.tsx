@@ -52,16 +52,19 @@ const Personal = () => {
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.3}>
           <div className="w-full mb-[25px] md:mb-0">
-            {personals.map((personal) => (
-              <PersonalTab
-                key={personal.id}
-                personal={personal}
-                isSelected={personal.id === selectedPersonalId}
-                onClick={togglePersonal}
-                isHovered={hoveredPersonalId === personal.id}
-                setHoveredPersonalId={setHoveredPersonalId}
-              />
-            ))}
+            {personals
+              .slice()
+              .reverse()
+              .map((personal) => (
+                <PersonalTab
+                  key={personal.id}
+                  personal={personal}
+                  isSelected={personal.id === selectedPersonalId}
+                  onClick={togglePersonal}
+                  isHovered={hoveredPersonalId === personal.id}
+                  setHoveredPersonalId={setHoveredPersonalId}
+                />
+              ))}
           </div>
         </SmoothLoadingSection>
       </div>
@@ -75,21 +78,24 @@ const Personal = () => {
           />
         ) : (
           <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-14 md:ml-12">
-            {personals.map((personal, index) => (
-              <SmoothLoadingSection delay={0.4}>
-                <PersonalShowcase
-                  key={personal.id}
-                  personal={personal}
-                  index={index}
-                  personals={personals}
-                  onClick={togglePersonal}
-                  isHovered={hoveredPersonalId === personal.id}
-                  uniHovered={uniHovered}
-                  setUniHovered={setUniHovered}
-                  setHoveredPersonalId={setHoveredPersonalId}
-                />
-              </SmoothLoadingSection>
-            ))}
+            {personals
+              .slice()
+              .reverse()
+              .map((personal, index) => (
+                <SmoothLoadingSection delay={0.4}>
+                  <PersonalShowcase
+                    key={personal.id}
+                    personal={personal}
+                    index={index}
+                    personals={personals}
+                    onClick={togglePersonal}
+                    isHovered={hoveredPersonalId === personal.id}
+                    uniHovered={uniHovered}
+                    setUniHovered={setUniHovered}
+                    setHoveredPersonalId={setHoveredPersonalId}
+                  />
+                </SmoothLoadingSection>
+              ))}
           </div>
         )}
       </div>
