@@ -51,15 +51,20 @@ const Projects = () => {
             {projects
               .slice()
               .reverse()
-              .map((project) => (
-                <ProjectTab
+              .map((project, index, arr) => (
+                <SmoothLoadingSection
+                  delay={(arr.length - index - 1) * 0.1}
                   key={project.id}
-                  project={project}
-                  isSelected={project.id === selectedProjectId}
-                  onClick={toggleProject}
-                  isHovered={hoveredProjectId === project.id}
-                  setHoveredProjectId={setHoveredProjectId}
-                />
+                >
+                  <ProjectTab
+                    key={project.id}
+                    project={project}
+                    isSelected={project.id === selectedProjectId}
+                    onClick={toggleProject}
+                    isHovered={hoveredProjectId === project.id}
+                    setHoveredProjectId={setHoveredProjectId}
+                  />
+                </SmoothLoadingSection>
               ))}
           </div>
         </SmoothLoadingSection>
@@ -77,8 +82,11 @@ const Projects = () => {
             {projects
               .slice()
               .reverse()
-              .map((project, index) => (
-                <SmoothLoadingSection delay={0.4} key={project.id}>
+              .map((project, index, arr) => (
+                <SmoothLoadingSection
+                  delay={(arr.length - index - 1) * 0.1}
+                  key={project.id}
+                >
                   <ProjectShowcase
                     project={project}
                     index={index}

@@ -54,15 +54,20 @@ const Community = () => {
             {communities
               .slice()
               .reverse()
-              .map((community) => (
-                <CommunityTab
+              .map((community, index, arr) => (
+                <SmoothLoadingSection
+                  delay={(arr.length - index - 1) * 0.1}
                   key={community.id}
-                  community={community}
-                  isSelected={community.id === selectedCommunityId}
-                  onClick={toggleCommunity}
-                  isHovered={hoveredCommunityId === community.id}
-                  setHoveredCommunityId={setHoveredCommunityId}
-                />
+                >
+                  <CommunityTab
+                    key={community.id}
+                    community={community}
+                    isSelected={community.id === selectedCommunityId}
+                    onClick={toggleCommunity}
+                    isHovered={hoveredCommunityId === community.id}
+                    setHoveredCommunityId={setHoveredCommunityId}
+                  />
+                </SmoothLoadingSection>
               ))}
           </div>
         </SmoothLoadingSection>
@@ -80,8 +85,11 @@ const Community = () => {
             {communities
               .slice()
               .reverse()
-              .map((community, index) => (
-                <SmoothLoadingSection delay={0.4}>
+              .map((community, index, arr) => (
+                <SmoothLoadingSection
+                  delay={(arr.length - index - 1) * 0.1}
+                  key={community.id}
+                >
                   <CommunityShowcase
                     key={community.id}
                     community={community}

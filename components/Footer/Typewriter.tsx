@@ -6,7 +6,7 @@ const TypeWriter = () => {
   const sentences = [
     "Let’s chat and share ideas :D",
     "Come check out ⍩Synchronize Sundays",
-    "Enjoy you stay...",
+    "Make something and share it <3",
   ];
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
