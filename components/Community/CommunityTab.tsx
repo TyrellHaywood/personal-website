@@ -40,7 +40,7 @@ const CommunityTab = ({
 }: CommunityTabProps) => {
   return (
     <motion.button
-      className={`w-full h-[25px] lg:h-[45px] flex items-center py-4 ${
+      className={`w-full h-auto min-h-[25px] lg:h-[45px] flex items-center py-0.5 text-left ${
         isHovered || isSelected ? "shadow-lg" : ""
       }`}
       onClick={() => onClick(community.id)}
@@ -65,7 +65,7 @@ const CommunityTab = ({
       }}
     >
       <h3
-        className={`flex-shrink-0 p-font text-xl lg:text-3xl ${
+        className={`p-font text-xl lg:text-3xl ${
           isSelected ? "font-[350]" : "font-light"
         }`}
       >
@@ -80,7 +80,7 @@ const CommunityTab = ({
         }}
       ></motion.div>
       {community.logo ? (
-        <div className="flex justify-center items-center w-[20px] h-[20px] lg:w-[30px] lg:h-[30px] pr-1">
+        <div className="flex justify-center items-center w-[20px] h-[20px] lg:w-[30px] lg:h-[30px] pr-1 flex-shrink-0">
           <Image
             src={community.logo}
             width={40}

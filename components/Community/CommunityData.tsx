@@ -12,6 +12,18 @@ export interface CommunityItem {
 const communities: CommunityItem[] = [
   {
     id: 0,
+    title: "Carleton Food Collective",
+    image: "/images/community/cfc.png",
+    logo: "/images/logos/cfc.png",
+    textArea:
+      "A student-run nonprofit organization rescuing food, offering free meals for the community to fight food insecurity",
+    year: 2023,
+    description:
+      "A student-run nonprofit organization rescuing food, offering free meals for the community",
+    link: "",
+  },
+  {
+    id: 1,
     title: "CUSEC",
     image: "/images/community/cusec-team.png",
     logo: "/images/logos/cusec2025.svg",
@@ -32,7 +44,7 @@ const communities: CommunityItem[] = [
     link: "https://2025.cusec.net/",
   },
   {
-    id: 1,
+    id: 2,
     title: "⍩ Synchronize",
     image: "/images/community/synchronize2.JPG",
     logo: "/images/logos/synchronize.png",

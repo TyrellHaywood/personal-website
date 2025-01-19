@@ -11,8 +11,8 @@ interface PersonalTarget {
   id: number;
   title: string;
   image: string;
-  textArea: string;
-  year: number;
+  textArea: string | JSX.Element;
+  year: number | string;
   description: string;
   link: string;
 }
@@ -48,7 +48,7 @@ const ProjectTargetShowcase = ({ personal }: PersonalTargetShowcaseProps) => {
         transition={transitionConfig()}
       >
         <Image
-          src="/images/placeholder.svg"
+          src={personal.image}
           width={600}
           height={400}
           alt={personal.title}
