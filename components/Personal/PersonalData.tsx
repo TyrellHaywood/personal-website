@@ -4,7 +4,7 @@ export interface PersonalItem {
   image: string;
   logo: string;
   textArea: string | JSX.Element;
-  year: number;
+  year: number | string;
   description: string;
   link: string;
 }
@@ -12,6 +12,18 @@ export interface PersonalItem {
 const personals: PersonalItem[] = [
   {
     id: 0,
+    title: "Reading",
+    image: "/images/personal/nature.png",
+    logo: "",
+    textArea:
+      "Whether it’s the most recent fantasy novel I’ve acquired or consuming strangers thoughts on the internet. Send me something good to read!!",
+    year: "<3",
+    description:
+      "Whether it’s the most recent fantasy novel I’ve acquired or consuming strangers thoughts on the internet. Send me something good to read!!",
+    link: "",
+  },
+  {
+    id: 1,
     title: "Bass Guitar",
     image: "/images/personal/bass.gif",
     logo: "",
@@ -32,7 +44,7 @@ const personals: PersonalItem[] = [
     link: "",
   },
   {
-    id: 1,
+    id: 2,
     title: "Cooking",
     image: "/images/personal/bagels.png",
     logo: "",

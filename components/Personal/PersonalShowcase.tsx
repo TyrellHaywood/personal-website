@@ -17,7 +17,7 @@ interface Personal {
   title: string;
   image: string;
   description: string;
-  year: number;
+  year: number | string;
 }
 
 interface PersonalShowcaseProps {
