@@ -55,15 +55,20 @@ const Personal = () => {
             {personals
               .slice()
               .reverse()
-              .map((personal) => (
-                <PersonalTab
+              .map((personal, index, arr) => (
+                <SmoothLoadingSection
+                  delay={(arr.length - index - 1) * 0.1}
                   key={personal.id}
-                  personal={personal}
-                  isSelected={personal.id === selectedPersonalId}
-                  onClick={togglePersonal}
-                  isHovered={hoveredPersonalId === personal.id}
-                  setHoveredPersonalId={setHoveredPersonalId}
-                />
+                >
+                  <PersonalTab
+                    key={personal.id}
+                    personal={personal}
+                    isSelected={personal.id === selectedPersonalId}
+                    onClick={togglePersonal}
+                    isHovered={hoveredPersonalId === personal.id}
+                    setHoveredPersonalId={setHoveredPersonalId}
+                  />
+                </SmoothLoadingSection>
               ))}
           </div>
         </SmoothLoadingSection>
@@ -81,8 +86,11 @@ const Personal = () => {
             {personals
               .slice()
               .reverse()
-              .map((personal, index) => (
-                <SmoothLoadingSection delay={0.4}>
+              .map((personal, index, arr) => (
+                <SmoothLoadingSection
+                  delay={(arr.length - index - 1) * 0.1}
+                  key={personal.id}
+                >
                   <PersonalShowcase
                     key={personal.id}
                     personal={personal}
