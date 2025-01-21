@@ -1,5 +1,6 @@
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 import InteractiveBackground from "@/components/InteractiveBackground";
 
@@ -31,6 +32,8 @@ export default function RootLayout({
       <body className="background">
         <InteractiveBackground />
         {children}
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
