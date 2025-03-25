@@ -29,38 +29,35 @@ const transitionConfig = (delay = 0) => ({
   delay: delay,
 });
 
-const ProjectTargetShowcase = ({ personal }: PersonalTargetShowcaseProps) => {
+const PersonalTargetShowcase = ({ personal }: PersonalTargetShowcaseProps) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <a
-      href={personal.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="w-full md:ml-[50px]"
-    >
-      <motion.div
-        className="w-full border-[1px] border-[--cblue] relative"
-        initial={{ borderColor: "var(--cblue)" }}
-        whileHover={{ borderColor: "var(--corange)" }}
-        onHoverStart={() => setIsHovered(true)}
-        onHoverEnd={() => setIsHovered(false)}
-        animate="animate"
-        transition={transitionConfig()}
-      >
-        <Image
-          src={personal.image}
-          width={600}
-          height={400}
-          alt={personal.title}
-          layout="responsive"
-          objectFit="contain"
-          className={`w-full ${isHovered ? "shadow-lg" : ""}`}
-        />
-        {/* corners */}
-        <TileCorners isHovered={true} />
-        {/* grid lines */}
-        <GridLines isHovered={isHovered} />
-      </motion.div>
+    <div className="w-full max-w-[768px] md:ml-[50px]">
+      <a href={personal.link} target="_blank" rel="noopener noreferrer">
+        <motion.div
+          className="w-full border-[1px] border-[--cblue] relative"
+          initial={{ borderColor: "var(--cblue)" }}
+          whileHover={{ borderColor: "var(--corange)" }}
+          onHoverStart={() => setIsHovered(true)}
+          onHoverEnd={() => setIsHovered(false)}
+          animate="animate"
+          transition={transitionConfig()}
+        >
+          <Image
+            src={personal.image}
+            width={600}
+            height={400}
+            alt={personal.title}
+            layout="responsive"
+            objectFit="contain"
+            className={`w-full ${isHovered ? "shadow-lg" : ""}`}
+          />
+          {/* corners */}
+          <TileCorners isHovered={true} />
+          {/* grid lines */}
+          <GridLines isHovered={isHovered} />
+        </motion.div>
+      </a>
       <div className="flex flex-col gap-4">
         <motion.h1
           className={`w-fit mt-4 mb-2 flex-shrink-0 p-font text-xl lg:text-3xl font-light transition-all duration-[200ms] ease-in-out ${
@@ -75,8 +72,8 @@ const ProjectTargetShowcase = ({ personal }: PersonalTargetShowcaseProps) => {
           {personal.textArea}
         </p>
       </div>
-    </a>
+    </div>
   );
 };
 
-export default ProjectTargetShowcase;
+export default PersonalTargetShowcase;

@@ -75,7 +75,7 @@ const Personal = () => {
       </div>
 
       {/* right Column */}
-      <div className="w-full md:w-3/4 max-w-[1440px] flex justify-center items-center">
+      <div className="w-full md:w-3/4 max-w-[1440px] flex justify-start items-center">
         {selectedPersonal ? (
           <PersonalTargetShowcase
             personal={selectedPersonal}
