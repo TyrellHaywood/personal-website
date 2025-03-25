@@ -101,7 +101,7 @@ const projects: ProjectItem[] = [
     ),
     year: 2024,
     description: "A web-based audio visualizer using p5.js",
-    link: "https://tyrellhaywood.github.io/audio-visual-v1/",
+    link: "https://audio-visual-v1.vercel.app/",
   },
   // {
   //   id: 0,
