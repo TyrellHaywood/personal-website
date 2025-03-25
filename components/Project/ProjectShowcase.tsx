@@ -69,8 +69,7 @@ const ProjectShowcase = ({
           width={600}
           height={400}
           alt="Project Showcase"
-          layout="responsive"
-          objectFit="contain"
+          style={{ objectFit: "contain" }}
         />
 
         {/* corners */}
