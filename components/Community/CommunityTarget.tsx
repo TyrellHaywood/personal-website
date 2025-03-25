@@ -60,9 +60,9 @@ const CommunityTargetShowcase = ({
           <GridLines isHovered={isHovered} />
         </motion.div>
       </a>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col">
         <motion.h1
-          className={`w-fit mt-4 mb-2 flex-shrink-0 p-font text-xl lg:text-3xl font-light transition-all duration-[200ms] ease-in-out ${
+          className={`w-fit mt-4 mb-2 flex-shrink-0 p-font text-xl font-light transition-all duration-[200ms] ease-in-out ${
             isHovered
               ? "border-[1px] border-[--corange] underline decoration-[--cblue] decoration-1"
               : ""
@@ -70,7 +70,7 @@ const CommunityTargetShowcase = ({
         >
           {community.title}
         </motion.h1>
-        <p className="p-font text-sm md:text-base lg:text-xl font-light">
+        <p className="p-font text-sm md:text-base font-light">
           {community.textArea}
         </p>
       </div>
