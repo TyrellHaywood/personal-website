@@ -75,14 +75,14 @@ const Personal = () => {
       </div>
 
       {/* right Column */}
-      <div className="w-full md:w-3/4 flex justify-center items-start">
+      <div className="w-full md:w-3/4 max-w-[1440px] flex justify-center items-center">
         {selectedPersonal ? (
           <PersonalTargetShowcase
             personal={selectedPersonal}
             isHovered={hoveredPersonalId === selectedPersonal.id}
           />
         ) : (
-          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-14 md:ml-12">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-16 md:ml-12">
             {personals
               .slice()
               .reverse()
