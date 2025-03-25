@@ -65,9 +65,7 @@ const PersonalTab = ({
       }}
     >
       <h3
-        className={`p-font text-xl lg:text-3xl ${
-          isSelected ? "font-[350]" : "font-light"
-        }`}
+        className={`p-font text-xl ${isSelected ? "font-[350]" : "font-light"}`}
       >
         {personal.title}
       </h3>
@@ -90,7 +88,7 @@ const PersonalTab = ({
         </div>
       ) : null}
       <h3
-        className={`flex-shrink-0 p-font text-xl lg:text-3xl ${
+        className={`flex-shrink-0 p-font text-xl ${
           isSelected ? "font-[350]" : "font-light"
         }`}
       >

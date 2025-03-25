@@ -71,14 +71,14 @@ const Projects = () => {
       </div>
 
       {/* right Column */}
-      <div className="w-full md:w-3/4 flex justify-center items-start">
+      <div className="w-full md:w-3/4 max-w-[1440px] flex justify-start items-center">
         {selectedProject ? (
           <ProjectTargetShowcase
             project={selectedProject}
             isHovered={hoveredProjectId === selectedProject.id}
           />
         ) : (
-          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-14 md:ml-12">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-16 md:ml-12">
             {projects
               .slice()
               .reverse()

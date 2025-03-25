@@ -16,14 +16,14 @@ const Homepage = () => {
     <div className="mt-[100px] w-full flex flex-col justify-center items-center z-[999999]">
       <SmoothLoadingSection delay={0}>
         <div className="mb-[25px] w-full">
-          <h1 className="h-font text-6xl lg:text-8xl text-left">Hello,</h1>
-          <h1 className="h-font text-6xl lg:text-8xl text-left">I'm Tyrell!</h1>
+          <h1 className="h-font text-6xl text-left">Hello,</h1>
+          <h1 className="h-font text-6xl text-left">I'm Tyrell!</h1>
         </div>
       </SmoothLoadingSection>
 
       <div className=" w-full flex flex-col justify-center text-left">
         <SmoothLoadingSection delay={0.2}>
-          <motion.p className="p-font text-sm md:text-base lg:text-xl mb-[15px] md:w-2/3">
+          <motion.p className="p-font text-sm md:text-base mb-[15px] md:w-2/3">
             I’m in my second year studying{" "}
             <motion.a
               className="relative inline-block"
@@ -90,7 +90,7 @@ const Homepage = () => {
           </motion.p>
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.4}>
-          <p className="p-font text-sm md:text-base lg:text-xl mb-[15px] md:w-2/3">
+          <p className="p-font text-sm md:text-base mb-[15px] md:w-2/3">
             Currently raising{" "}
             <motion.a
               className="relative inline-block"
@@ -116,7 +116,7 @@ const Homepage = () => {
           </p>
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.4}>
-          <p className="p-font text-sm md:text-base lg:text-xl mb-[15px] md:w-2/3">
+          <p className="p-font text-sm md:text-base mb-[15px] md:w-2/3">
             Right now I’m working at the{" "}
             <motion.a
               className="relative inline-block"

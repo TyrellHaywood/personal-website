@@ -60,7 +60,7 @@ const CommunityShowcase = ({
       }}
     >
       <div
-        className={`w-full max-w-[300px] h-full relative ${
+        className={`w-full max-w-[500px] h-full relative ${
           isHovered ? "border-[1px] border-[--cblue] opacity-85 shadow-lg" : ""
         }`}
       >
@@ -69,8 +69,7 @@ const CommunityShowcase = ({
           width={600}
           height={400}
           alt="Project Showcase"
-          layout="responsive"
-          objectFit="contain"
+          style={{ objectFit: "contain" }}
         />
 
         {/* corners */}
@@ -86,7 +85,7 @@ const CommunityShowcase = ({
       {/* text */}
       <div className="text-left">
         <h3
-          className={`mt-4 mb-2 flex-shrink-0 p-font text-xl lg:text-3xl text-left font-light inline-block ${
+          className={`mt-4 mb-2 flex-shrink-0 p-font text-xl text-left font-light inline-block ${
             isHovered
               ? "border-[1px] border-[--corange] underline decoration-[--cblue] decoration-1"
               : ""
@@ -95,7 +94,7 @@ const CommunityShowcase = ({
           {community.title}
         </h3>
         <p
-          className={`flex-shrink-0 p-font text-sm md:text-base lg:text-xl text-left font-light
+          className={`flex-shrink-0 p-font text-sm md:text-base text-left font-light
           `}
         >
           {community.description}
