@@ -86,7 +86,7 @@ const CommunityShowcase = ({
       {/* text */}
       <div className="text-left">
         <h3
-          className={`mt-4 mb-2 flex-shrink-0 p-font text-xl lg:text-3xl text-left font-light inline-block ${
+          className={`mt-4 mb-2 flex-shrink-0 p-font text-xl text-left font-light inline-block ${
             isHovered
               ? "border-[1px] border-[--corange] underline decoration-[--cblue] decoration-1"
               : ""
@@ -95,7 +95,7 @@ const CommunityShowcase = ({
           {community.title}
         </h3>
         <p
-          className={`flex-shrink-0 p-font text-sm md:text-base lg:text-xl text-left font-light
+          className={`flex-shrink-0 p-font text-sm md:text-base text-left font-light
           `}
         >
           {community.description}

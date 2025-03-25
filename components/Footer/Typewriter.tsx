@@ -50,7 +50,7 @@ const TypeWriter = () => {
   }, [displayedText, isDeleting, typingSpeed, sentences, currentSentenceIndex]);
 
   return (
-    <div className="border-[1px] border-[--cblue] w-full h-auto min-h-[45px] flex items-center pl-2 p-font font-light text-xl lg:text-3xl relative">
+    <div className="border-[1px] border-[--cblue] w-full h-auto min-h-[45px] flex items-center pl-2 p-font font-light text-xl relative">
       {"> " + displayedText}
       <div className="w-[1px] h-full min-h-[40px] bg-black"></div>
       {/* corners */}
