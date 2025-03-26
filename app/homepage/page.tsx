@@ -97,7 +97,7 @@ const Homepage = () => {
               initial="initial"
               whileHover="hover"
               animate="initial"
-              href="https://www.instagram.com/synchronize.now/"
+              href="https://lu.ma/synchronize"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -136,8 +136,8 @@ const Homepage = () => {
                 }}
                 className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
               />
-            </motion.a>
-            , helping build{" "}
+            </motion.a>{" "}
+            as a Software Developer, helping build{" "}
             <motion.a
               className="relative inline-block"
               initial="initial"

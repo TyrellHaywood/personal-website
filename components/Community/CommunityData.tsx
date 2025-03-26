@@ -50,9 +50,9 @@ const communities: CommunityItem[] = [
     logo: "/images/logos/synchronize.png",
     textArea: (
       <>
-        Inspiring makers in Ottawa by running weekly co-working sessions @
-        Carleton University. A dedicated time to meet like-minded people and
-        share ideas :D
+        Co-Founder and Host at Synchronize. Inspiring makers in Ottawa by
+        running weekly co-working sessions @ Carleton University. A dedicated
+        time to meet like-minded people and share ideas :D
         <br />
         <br />
         Learning how to build a community of passionate people making things
@@ -66,7 +66,7 @@ const communities: CommunityItem[] = [
     year: 2024,
     description:
       "Inspiring makers in Ottawa by running weekly co-working sessions @ Carleton University",
-    link: "https://www.instagram.com/synchronize.now/",
+    link: "https://lu.ma/synchronize",
   },
 ];
 
