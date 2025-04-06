@@ -37,6 +37,8 @@ const projects: ProjectItem[] = [
         <a
           href="https://developers.meethue.com/develop/get-started-2/"
           className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           hue dev docs
         </a>{" "}
@@ -44,6 +46,8 @@ const projects: ProjectItem[] = [
         <a
           href="https://github.com/benknight/hue-python-rgb-converter"
           className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           this
         </a>{" "}
@@ -81,6 +85,8 @@ const projects: ProjectItem[] = [
         <a
           href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"
           className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Web Audio API
         </a>{" "}
@@ -91,6 +97,8 @@ const projects: ProjectItem[] = [
         <a
           href="https://en.wikipedia.org/wiki/Perlin_noise#:~:text=Perlin%20noise%20is%20a%20type,the%20creation%20of%20image%20textures."
           className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Perlin Noise
         </a>{" "}
@@ -103,19 +111,32 @@ const projects: ProjectItem[] = [
     description: "A web-based audio visualizer using p5.js",
     link: "https://audio-visual-v1.vercel.app/",
   },
-  // {
-  //   id: 0,
-  //   type: "",
-  //   title: "",
-  //   image: "/images/projects/",
-  //   logo: "",
-  //   textArea:
-  //     "",
-  //   year: 0,
-  //   description:
-  //     "",
-  //   link: "",
-  // },
+  {
+    id: 5,
+    type: "",
+    title: "MetaGraph",
+    image: "/images/projects/MetaGraph.gif",
+    logo: "",
+    textArea: (
+      <>
+        A React-based network visualization tool that automatically generates,
+        clusters, and displays relationships between nodes based on their
+        metadata. Implemented using{" "}
+        <a
+          href="https://github.com/vasturiano/react-force-graph"
+          className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          react-force-graph
+        </a>
+        {""}.
+      </>
+    ),
+    year: 2024,
+    description: "A React-based 2D force-graph visualizer",
+    link: "https://github.com/TyrellHaywood/meta-graph",
+  },
 ];
 
 export default projects;
