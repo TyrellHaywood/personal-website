@@ -33,6 +33,8 @@ const personals: PersonalItem[] = [
         <a
           href="https://www.instagram.com/stories/highlights/17851867422044298/"
           className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           instagram
         </a>{" "}

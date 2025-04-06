@@ -57,10 +57,27 @@ const communities: CommunityItem[] = [
         <br />
         Learning how to build a community of passionate people making things
         they care about. Ottawa’s official{" "}
-        <a href="https://www.socratica.info/" className="underline">
+        <a
+          href="https://www.socratica.info/"
+          className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Socratica
         </a>{" "}
-        node
+        node.
+        <br />
+        <br />
+        Check out our events{" "}
+        <a
+          href="https://lu.ma/calendar/manage/cal-W2eSnhNARlYQWqD"
+          className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          here
+        </a>
+        {""}!
       </>
     ),
     year: 2024,
