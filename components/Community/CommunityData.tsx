@@ -33,7 +33,10 @@ const communities: CommunityItem[] = [
         conference (with an incredible team) &lt;3
         <br />
         <br />
-        Current Director of Technology, responsible for building our 2025
+        Currently serving as Director of Speakers, bringing meaningful, diverse perspectives from industry professionals, researchers, and tech leaders to speak at our 2026 conference.
+        <br />
+        <br />
+        Previous Director of Technology, responsible for building our 2025
         conference website. During the conference, I handled audio visuals,
         registration, and helped with speakers & sponsors.
       </>
@@ -46,7 +49,7 @@ const communities: CommunityItem[] = [
   {
     id: 2,
     title: "⍩ Synchronize",
-    image: "/images/community/synchronize2.JPG",
+    image: "/images/community/synchronize3.jpg",
     logo: "/images/logos/synchronize.png",
     textArea: (
       <>

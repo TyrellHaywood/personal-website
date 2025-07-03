@@ -24,7 +24,7 @@ const Homepage = () => {
       <div className=" w-full flex flex-col justify-center text-left">
         <SmoothLoadingSection delay={0.2}>
           <motion.p className="p-font text-sm md:text-base mb-[15px] md:w-2/3">
-            I’m in my second year studying{" "}
+            I’m in my third year studying{" "}
             <motion.a
               className="relative inline-block"
               initial="initial"
@@ -34,7 +34,7 @@ const Homepage = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              CS @ Carleton University
+              Computer Science @ Carleton University
               <motion.span
                 transition={transitionConfig(0)}
                 variants={{
@@ -44,7 +44,7 @@ const Homepage = () => {
                 className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
               />
             </motion.a>
-            . This year I’ve joined{" "}
+            . This year I’ve returned to{" "}
             <motion.a
               className="relative inline-block"
               initial="initial"
@@ -74,7 +74,7 @@ const Homepage = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Director of Technology
+              Director of Speakers
               <motion.span
                 transition={transitionConfig(0)}
                 variants={{
@@ -84,9 +84,7 @@ const Homepage = () => {
                 className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
               />
             </motion.a>{" "}
-            for our 2025 conference. Lately, I’m excited about creating digital
-            experiences that incorporate audio visuals, GIS, and user
-            interactions.
+            for our 2026 conference. Lately, I'm excited about creating digital experiences that focus on thoughtful user interfaces, audio experiences, machine learning, and creative coding.
           </motion.p>
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.4}>
@@ -137,7 +135,7 @@ const Homepage = () => {
                 className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
               />
             </motion.a>{" "}
-            as a Software Developer, helping build{" "}
+            as a Software Developer Intern, helping build{" "}
             <motion.a
               className="relative inline-block"
               initial="initial"
@@ -159,8 +157,8 @@ const Homepage = () => {
             </motion.a>
             , a web-based platform for visualizing and interacting with
             multi-scale geospatial data, building informational models, and 3D
-            media. I'm using technologies like React / Next.js, and open-source
-            tools such as MapLibre and Three.js for GIS and 3D model rendering.
+            media. I'm leading the refactor of our user interface using Next.js, TypeScript, and open-source
+            tools like TanStack, MapLibre, SWR, and Shadcn.
           </p>
         </SmoothLoadingSection>
       </div>
