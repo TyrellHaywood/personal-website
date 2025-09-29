@@ -88,6 +88,21 @@ const communities: CommunityItem[] = [
       "Inspiring makers in Ottawa by running weekly co-working sessions @ Carleton University",
     link: "https://lu.ma/synchronize",
   },
+  {
+    id: 3,
+    title: "Notion",
+    image: "/images/community/notion_cl.jpeg",
+    logo: "/images/logos/notion.png",
+    textArea: (
+      <>
+        Notion Campus Leader @ Carleton University
+      </>
+    ),
+    year: 2025,
+    description:
+      "Notion Campus Leader @ Carleton University",
+    link: "/",
+  },
 ];
 
 export default communities;
