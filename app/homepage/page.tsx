@@ -115,7 +115,50 @@ const Homepage = () => {
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.4}>
           <p className="p-font text-sm md:text-base mb-[15px] md:w-2/3">
-            Right now I’m working at the{" "}
+            I've recently joined{" "}
+            <motion.a
+              className="relative inline-block"
+              initial="initial"
+              whileHover="hover"
+              animate="initial"
+              href="https://fellowship.mlh.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Major League Hacking (MLH)
+              <motion.span
+                transition={transitionConfig(0)}
+                variants={{
+                  hover: { height: "80%" },
+                  initial: { height: "2px" },
+                }}
+                className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
+              />
+            </motion.a>{" "}
+            as a Software Engineering Fellow, working on the{" "}
+            <motion.a
+              className="relative inline-block"
+              initial="initial"
+              whileHover="hover"
+              animate="initial"
+              href="https://github.com/apache/airflow"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Apache Airflow
+              <motion.span
+                transition={transitionConfig(0)}
+                variants={{
+                  hover: { height: "80%" },
+                  initial: { height: "2px" },
+                }}
+                className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
+              />
+            </motion.a>{" "}
+            Platform. 
+            {" "}
+            {" "}
+            I’m also working at the{" "}
             <motion.a
               className="relative inline-block"
               initial="initial"
@@ -135,13 +178,13 @@ const Homepage = () => {
                 className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
               />
             </motion.a>{" "}
-            as a Software Developer Intern, helping build{" "}
+            as a fullstack Software Developer Intern, helping build{" "}
             <motion.a
               className="relative inline-block"
               initial="initial"
               whileHover="hover"
               animate="initial"
-              href="https://www.buildingtransformations.org/submissions/canada-s-digital-twin"
+              href="https://cims.carleton.ca/project/Digital_Twin_Prototype"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -155,10 +198,7 @@ const Homepage = () => {
                 className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
               />
             </motion.a>
-            , a web-based platform for visualizing and interacting with
-            multi-scale geospatial data, building informational models, and 3D
-            media. I'm leading the refactor of our user interface using Next.js, TypeScript, and open-source
-            tools like TanStack, MapLibre, SWR, and Shadcn.
+            .
           </p>
         </SmoothLoadingSection>
       </div>
