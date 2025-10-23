@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 // icons
-import { GithubLogo, LinkedinLogo, InstagramLogo } from "@phosphor-icons/react";
+import { GithubLogo, LinkedinLogo, InstagramLogo, XLogo } from "@phosphor-icons/react";
 
 // components
 import TileCorners from "../HoverStates/TileCorners";
@@ -35,6 +35,11 @@ const Socials = () => {
       id: "instagram",
       href: "https://www.instagram.com/tyrell.haywood/",
       icon: InstagramLogo,
+    },
+    {
+      id: "x",
+      href: "https://x.com/tyrellchaywood",
+      icon: XLogo,
     },
   ];
 
