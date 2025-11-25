@@ -164,7 +164,7 @@ const Homepage = () => {
               initial="initial"
               whileHover="hover"
               animate="initial"
-              href="https://cims.carleton.ca/"
+              href="https://cims.carleton.ca/project/Digital_Twin_Prototype"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -184,7 +184,8 @@ const Homepage = () => {
               initial="initial"
               whileHover="hover"
               animate="initial"
-              href="https://cims.carleton.ca/project/Digital_Twin_Prototype"
+              href="https://collabdt.org/home"
+              
               target="_blank"
               rel="noopener noreferrer"
             >
