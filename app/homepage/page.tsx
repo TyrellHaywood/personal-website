@@ -44,7 +44,32 @@ const Homepage = () => {
                 className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
               />
             </motion.a>
-            . This year I’ve returned to{" "}
+            , and an {" "}
+            <motion.a
+              className="relative inline-block"
+              initial="initial"
+              whileHover="hover"
+              animate="initial"
+              href="https://www.lyft.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Incoming Software Engineer Intern @ Lyft
+              <motion.span
+                transition={transitionConfig(0)}
+                variants={{
+                  hover: { height: "80%" },
+                  initial: { height: "2px" },
+                }}
+                className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
+              />
+            </motion.a>
+            , summer 2026!
+          </motion.p>
+        </SmoothLoadingSection>
+        <SmoothLoadingSection delay={0.2}>
+          <motion.p className="p-font text-sm md:text-base mb-[15px] md:w-2/3">
+            This year I’ve returned to{" "}
             <motion.a
               className="relative inline-block"
               initial="initial"
