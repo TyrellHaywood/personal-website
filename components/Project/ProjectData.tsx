@@ -70,7 +70,7 @@ const projects: ProjectItem[] = [
     year: 2024,
     description:
       "The official website for the 2025 edition of the Canadian University Software Engineering Conference (CUSEC)",
-    link: "https://2025.cusec.net/",
+    link: "https://2026.cusec.net/",
   },
   {
     id: 4,

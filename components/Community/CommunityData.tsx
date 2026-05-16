@@ -44,7 +44,7 @@ const communities: CommunityItem[] = [
     year: 2024,
     description:
       "Growing CUSEC, Canada’s largest student-run software engineering conference (with an incredible team) <3",
-    link: "https://2025.cusec.net/",
+    link: "https://2026.cusec.net/",
   },
   {
     id: 2,

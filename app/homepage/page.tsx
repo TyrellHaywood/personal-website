@@ -44,7 +44,7 @@ const Homepage = () => {
                 className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
               />
             </motion.a>
-            , and an {" "}
+            , and currently a {" "}
             <motion.a
               className="relative inline-block"
               initial="initial"
@@ -54,7 +54,7 @@ const Homepage = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Incoming Software Engineer Intern @ Lyft
+              Software Engineer Intern @ Lyft
               <motion.span
                 transition={transitionConfig(0)}
                 variants={{
@@ -75,7 +75,7 @@ const Homepage = () => {
               initial="initial"
               whileHover="hover"
               animate="initial"
-              href="https://2025.cusec.net/"
+              href="https://2026.cusec.net/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -95,11 +95,11 @@ const Homepage = () => {
               initial="initial"
               whileHover="hover"
               animate="initial"
-              href="https://2025.cusec.net/"
+              href="https://2026.cusec.net/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Director of Speakers
+              Director of Sponsors
               <motion.span
                 transition={transitionConfig(0)}
                 variants={{
@@ -109,7 +109,7 @@ const Homepage = () => {
                 className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
               />
             </motion.a>{" "}
-            for our 2026 conference. Lately, I'm excited about creating digital experiences that focus on thoughtful user interfaces, audio experiences, machine learning, and creative coding.
+            for our 2027 conference. Lately, I'm excited about creating digital experiences that focus on thoughtful user interfaces, audio experiences, machine learning, and creative coding.
           </motion.p>
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.4}>
