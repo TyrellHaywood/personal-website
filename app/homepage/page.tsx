@@ -64,7 +64,7 @@ const Homepage = () => {
                 className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
               />
             </motion.a>
-            , summer 2026!
+            !
           </motion.p>
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.2}>
