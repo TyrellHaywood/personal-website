@@ -13,7 +13,7 @@ interface ProjectTarget {
   image: string;
   textArea: string | JSX.Element;
   year: number;
-  description: string;
+  description: string | JSX.Element;
   link: string;
 }
 
@@ -43,15 +43,29 @@ const ProjectTargetShowcase = ({ project }: ProjectTargetShowcaseProps) => {
           animate="animate"
           transition={transitionConfig()}
         >
-          <Image
-            src={project.image}
-            width={600}
-            height={400}
-            alt={project.title}
-            layout="responsive"
-            objectFit="contain"
-            className={`w-full ${isHovered ? "shadow-lg" : ""}`}
-          />
+          {project.image.match(/\.(mov|mp4|webm)$/i) ? (
+            <video
+              src={project.image}
+              width={600}
+              height={400}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className={`w-full ${isHovered ? "shadow-lg" : ""}`}
+              style={{ objectFit: "contain" }}
+            />
+          ) : (
+            <Image
+              src={project.image}
+              width={600}
+              height={400}
+              alt={project.title}
+              layout="responsive"
+              objectFit="contain"
+              className={`w-full ${isHovered ? "shadow-lg" : ""}`}
+            />
+          )}
           {/* corners */}
           <TileCorners isHovered={true} />
           {/* grid lines */}

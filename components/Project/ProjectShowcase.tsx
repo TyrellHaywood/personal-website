@@ -16,7 +16,7 @@ interface Project {
   id: number;
   title: string;
   image: string;
-  description: string;
+  description: string | JSX.Element;
   year: number;
 }
 
@@ -64,13 +64,26 @@ const ProjectShowcase = ({
           isHovered ? "border-[1px] border-[--cblue] opacity-85 shadow-lg" : ""
         }`}
       >
-        <Image
-          src={project.image}
-          width={600}
-          height={400}
-          alt="Project Showcase"
-          style={{ objectFit: "contain" }}
-        />
+        {project.image.match(/\.(mov|mp4|webm)$/i) ? (
+          <video
+            src={project.image}
+            width={600}
+            height={400}
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{ objectFit: "contain", width: "100%" }}
+          />
+        ) : (
+          <Image
+            src={project.image}
+            width={600}
+            height={400}
+            alt="Project Showcase"
+            style={{ objectFit: "contain" }}
+          />
+        )}
 
         {/* corners */}
         <TileCorners isHovered={isHovered} />
