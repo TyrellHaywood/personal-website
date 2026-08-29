@@ -6,7 +6,7 @@ export interface ProjectItem {
   logo: string;
   textArea: string | JSX.Element;
   year: number;
-  description: string;
+  description: string | JSX.Element;
   link: string;
 }
 
@@ -136,6 +136,41 @@ const projects: ProjectItem[] = [
     year: 2024,
     description: "A React-based 2D force-graph visualizer",
     link: "https://github.com/TyrellHaywood/meta-graph",
+  },
+  {
+    id: 6,
+    type: "",
+    title: "Echo",
+    image: "/images/projects/echo.png",
+    logo: "",
+    textArea: (
+      <>
+        An organic ecosystem for intentional music collaboration. Written about{" "}
+        <a
+          href="https://tyrellhaywood.substack.com/p/an-artists-tool-for-intentional-co?r=53smpk&utm_campaign=post&utm_medium=web"
+          className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          here
+        </a>
+        .
+      </>
+    ),
+    year: 2025,
+    description: "An organic ecosystem for intentional music collaboration.",
+    link: "https://3cho.vercel.app/",
+  },
+  {
+    id: 7,
+    type: "",
+    title: "LiveNYC",
+    image: "/images/projects/livenyc.mov",
+    logo: "",
+    textArea: "Real-time generative sound from NYC data",
+    year: 2026,
+    description: "Real-time generative sound from NYC data",
+    link: "https://livenyc.vercel.app/",
   },
 ];
 

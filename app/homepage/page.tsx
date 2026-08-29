@@ -114,7 +114,7 @@ const Homepage = () => {
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.4}>
           <p className="p-font text-sm md:text-base mb-[15px] md:w-2/3">
-            Currently raising{" "}
+            Formerly raising{" "}
             <motion.a
               className="relative inline-block"
               initial="initial"
@@ -140,7 +140,7 @@ const Homepage = () => {
         </SmoothLoadingSection>
         <SmoothLoadingSection delay={0.4}>
           <p className="p-font text-sm md:text-base mb-[15px] md:w-2/3">
-            I've recently joined{" "}
+            Previously @{" "}
             <motion.a
               className="relative inline-block"
               initial="initial"
@@ -160,7 +160,7 @@ const Homepage = () => {
                 className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
               />
             </motion.a>{" "}
-            as a Software Engineering Fellow, working on the{" "}
+            as a Software Engineering Fellow, bettering the{" "}
             <motion.a
               className="relative inline-block"
               initial="initial"
@@ -183,17 +183,17 @@ const Homepage = () => {
             Platform. 
             {" "}
             {" "}
-            I’m also working at the{" "}
+            Also previously @{" "}
             <motion.a
               className="relative inline-block"
               initial="initial"
               whileHover="hover"
               animate="initial"
-              href="https://cims.carleton.ca/project/Digital_Twin_Prototype"
+              href="https://www.notion.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Carleton Immersive Media Studio (CIMS)
+              Notion
               <motion.span
                 transition={transitionConfig(0)}
                 variants={{
@@ -203,28 +203,7 @@ const Homepage = () => {
                 className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
               />
             </motion.a>{" "}
-            as a fullstack Software Developer Intern, helping build{" "}
-            <motion.a
-              className="relative inline-block"
-              initial="initial"
-              whileHover="hover"
-              animate="initial"
-              href="https://collabdt.org/home"
-              
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Canada’s Digital Twin
-              <motion.span
-                transition={transitionConfig(0)}
-                variants={{
-                  hover: { height: "80%" },
-                  initial: { height: "2px" },
-                }}
-                className=" absolute bottom-1 left-0 right-0 highlight opacity-80 -z-10 rounded-sm"
-              />
-            </motion.a>
-            .
+            as a Campus Leader.
           </p>
         </SmoothLoadingSection>
       </div>

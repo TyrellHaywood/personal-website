@@ -23,30 +23,6 @@ const communities: CommunityItem[] = [
     link: "",
   },
   {
-    id: 1,
-    title: "CUSEC",
-    image: "/images/community/cusec-team.png",
-    logo: "/images/logos/cusec2025.svg",
-    textArea: (
-      <>
-        Growing CUSEC, Canada’s largest student-run software engineering
-        conference (with an incredible team) &lt;3
-        <br />
-        <br />
-        Currently serving as Director of Speakers, bringing meaningful, diverse perspectives from industry professionals, researchers, and tech leaders to speak at our 2026 conference.
-        <br />
-        <br />
-        Previous Director of Technology, responsible for building our 2025
-        conference website. During the conference, I handled audio visuals,
-        registration, and helped with speakers & sponsors.
-      </>
-    ),
-    year: 2024,
-    description:
-      "Growing CUSEC, Canada’s largest student-run software engineering conference (with an incredible team) <3",
-    link: "https://2026.cusec.net/",
-  },
-  {
     id: 2,
     title: "⍩ Synchronize",
     image: "/images/community/synchronize3.jpg",
@@ -102,6 +78,33 @@ const communities: CommunityItem[] = [
     description:
       "Notion Campus Leader @ Carleton University",
     link: "/",
+  },
+  {
+    id: 1,
+    title: "CUSEC",
+    image: "/images/community/cusec-team.png",
+    logo: "/images/logos/cusec27.png",
+    textArea: (
+      <>
+        Growing CUSEC, Canada’s largest student-run software engineering
+        conference (with an incredible team) &lt;3
+        <br />
+        <br />
+        Currently serving as the Director of Sponsors for our 2027 conference, helping to bring in sponsors to support our conference and provide opportunities for students to launch their careers.
+        <br />
+        <br />
+        Previous Director of Speakers (2026), bringing meaningful, diverse perspectives from industry professionals, researchers, and tech leaders to speak at our 2026 conference.
+        <br />
+        <br />
+        Previous Director of Technology (2025), responsible for building our 2025
+        conference website. During the conference, I handled audio visuals,
+        registration, and helped with speakers & sponsors.
+      </>
+    ),
+    year: 2026,
+    description:
+      "Growing CUSEC, Canada’s largest student-run software engineering conference (with an incredible team) <3",
+    link: "https://cusec.net/",
   },
 ];
 

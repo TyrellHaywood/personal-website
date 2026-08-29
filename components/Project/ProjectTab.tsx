@@ -20,7 +20,7 @@ interface Project {
   logo: string;
   textArea: string | JSX.Element;
   year: number;
-  description: string;
+  description: string | JSX.Element;
   link: string;
 }
 
