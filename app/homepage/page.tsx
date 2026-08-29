@@ -75,7 +75,7 @@ const Homepage = () => {
               initial="initial"
               whileHover="hover"
               animate="initial"
-              href="https://2026.cusec.net/"
+              href="https://cusec.net/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -95,7 +95,7 @@ const Homepage = () => {
               initial="initial"
               whileHover="hover"
               animate="initial"
-              href="https://2026.cusec.net/"
+              href="https://2027.cusec.net/"
               target="_blank"
               rel="noopener noreferrer"
             >
