@@ -24,7 +24,7 @@ const Homepage = () => {
       <div className=" w-full flex flex-col justify-center text-left">
         <SmoothLoadingSection delay={0.2}>
           <motion.p className="p-font text-sm md:text-base mb-[15px] md:w-2/3">
-            I’m in my third year studying{" "}
+            I’m in my fourth year studying{" "}
             <motion.a
               className="relative inline-block"
               initial="initial"
