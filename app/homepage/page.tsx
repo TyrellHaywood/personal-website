@@ -24,7 +24,7 @@ const Homepage = () => {
       <div className=" w-full flex flex-col justify-center text-left">
         <SmoothLoadingSection delay={0.2}>
           <motion.p className="p-font text-sm md:text-base mb-[15px] md:w-2/3">
-            I’m in my third year studying{" "}
+            I’m in my fourth year studying{" "}
             <motion.a
               className="relative inline-block"
               initial="initial"
@@ -75,7 +75,7 @@ const Homepage = () => {
               initial="initial"
               whileHover="hover"
               animate="initial"
-              href="https://2026.cusec.net/"
+              href="https://cusec.net/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -95,7 +95,7 @@ const Homepage = () => {
               initial="initial"
               whileHover="hover"
               animate="initial"
-              href="https://2026.cusec.net/"
+              href="https://2027.cusec.net/"
               target="_blank"
               rel="noopener noreferrer"
             >
