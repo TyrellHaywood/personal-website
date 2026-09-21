@@ -170,7 +170,7 @@ const projects: ProjectItem[] = [
     textArea: "Real-time generative sound from NYC data",
     year: 2026,
     description: "Real-time generative sound from NYC data",
-    link: "https://livenyc.vercel.app/",
+    link: "https://livenyc.tyrellhaywood.me/",
   },
 ];
 
