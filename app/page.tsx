@@ -23,9 +23,9 @@ export default function Home() {
         <Community />
       </SmoothLoadingSection>
 
-      <SmoothLoadingSection delay={0}>
+      {/* <SmoothLoadingSection delay={0}>
         <Personal />
-      </SmoothLoadingSection>
+      </SmoothLoadingSection> */}
 
       <SmoothLoadingSection delay={0}>
         <Footer />
